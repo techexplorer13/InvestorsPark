@@ -1,0 +1,12 @@
+<nav class="navbar navbar-default">
+    <div>
+        <ul class="nav navbar-nav">
+            <li *ngFor="let topic of topics">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button">
+                    {{topic}}
+                    <span class="caret"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
