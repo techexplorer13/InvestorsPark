@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  topics:string[]=["SIP Investment","Mutual Fund","About us"]
+  
   constructor() { }
 
   ngOnInit() {
