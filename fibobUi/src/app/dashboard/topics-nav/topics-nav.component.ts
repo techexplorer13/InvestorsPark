@@ -20,8 +20,5 @@ export class TopicsNavComponent implements OnInit {
     if(topic=="Mutual Fund"){
       this.selectedNavBar=this.mutualFundtopics;
     }
-    else{
-      this.selectedNavBar=[];
-    }
   }
 }
