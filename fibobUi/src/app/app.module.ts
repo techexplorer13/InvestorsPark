@@ -28,7 +28,8 @@ const appRoutes:Routes=[
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(
-      appRoutes
+      appRoutes,
+      { enableTracing: true } 
     )
   ],
   providers: [],

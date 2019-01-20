@@ -19,7 +19,6 @@ export class AllMutualFund {
 
 
    private extractData(res: Response) {
-    alert("extract");
     let body = res;
     return body || { };
   }

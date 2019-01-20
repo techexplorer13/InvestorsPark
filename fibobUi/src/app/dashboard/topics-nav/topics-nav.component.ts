@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-topics-nav',
@@ -6,12 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./topics-nav.component.css']
 })
 export class TopicsNavComponent implements OnInit {
+  /**
+   * parent options of nav br
+   */
   topics:string[]=["SIP Investment","Mutual Fund","About us"]
-  mutualFundtopics:string[]=["All Mutual Fund"];
+  /**
+   * for mutual fund nav bar
+   */
+  mutualFundtopics:any[]=[["All Mutual Fund","/allmutualfund"]];
 
-  selectedNavBar:string[];
+  selectedNavBar:any[];
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }

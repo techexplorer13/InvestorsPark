@@ -9,10 +9,11 @@
         </a>
         <ul class="dropdown-menu" *ngIf="topic=='Mutual Fund'">
           <li *ngFor="let mutualFundtopic of selectedNavBar">
-              <a routerLink="/allmutualfund" router>{{mutualFundtopic}}</a>
+              <a [routerLink]="mutualFundtopic[1]">{{mutualFundtopic[0]}}</a>
           </li>
        </ul>
       </li>
     </ul>
   </div>
 </nav>
+<router-outlet #routerOutlet="outlet"></router-outlet>

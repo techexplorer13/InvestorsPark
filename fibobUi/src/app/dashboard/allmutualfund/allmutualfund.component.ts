@@ -8,15 +8,14 @@ import { AllMutualFund } from 'src/app/services/allMutualFund.service';
 })
 export class AllmutualfundComponent implements OnInit {
 
+    mutualFundName:String[]=[]
+
   constructor(private restservice:AllMutualFund) {
-    alert('1');
     this.restservice.getProducts().subscribe(val => {
-      console.log(val);
-      alert(val);
+      this.mutualFundName=val;
     })
   }
 
   ngOnInit() {
-    alert('2');
   }
 }
