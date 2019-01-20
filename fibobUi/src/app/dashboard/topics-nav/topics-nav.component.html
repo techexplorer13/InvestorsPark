@@ -2,13 +2,14 @@
   <div>
     <ul class="nav navbar-nav">
       <li *ngFor="let topic of topics" class="dropdown" appDropdown>
-        <a class="dropdown-toggle" data-toggle="dropdown" role="button" (mouseover)="setOptions(topic)"  (mouseout)="setOptions(topic)">
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button" (mouseover)="setOptions(topic)" 
+         (mouseout)="setOptions(topic)">
           {{topic}}
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" *ngIf="topic=='Mutual Fund'">
           <li *ngFor="let mutualFundtopic of selectedNavBar">
-              <a href="#">{{mutualFundtopic}}</a>
+              <a routerLink="/allmutualfund" router>{{mutualFundtopic}}</a>
           </li>
        </ul>
       </li>
