@@ -1,8 +1,10 @@
 
 <div [ngClass]="'panel'" id="style-1">
 <ul  class="list-group">
-    <li *ngFor="let name of mutualFundName,let index = index" class="list-group-item" id="myValue">
+  <div class="myValue">
+    <li *ngFor="let name of mutualFundName,let index = index" class="list-group-item">
       {{name}}
     </li>
+  </div>
 </ul></div>
 
