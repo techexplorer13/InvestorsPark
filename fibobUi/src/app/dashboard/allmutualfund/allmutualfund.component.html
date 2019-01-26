@@ -1,5 +1,8 @@
-<ul>
-    <li *ngFor="let name of mutualFundName">
+
+<div [ngClass]="'panel'">
+<ul  class="list-group">
+    <li *ngFor="let name of mutualFundName" class="list-group-item">
       {{name}}
     </li>
-</ul>
+</ul></div>
+

@@ -1,0 +1,9 @@
+.panel{
+
+    overflow:scroll;
+    height:300px;
+    width:400px;
+    text-align: center;
+    position: relative;
+
+}

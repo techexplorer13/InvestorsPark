@@ -1,0 +1,14 @@
+.banner{
+  background-image: url(/assets/img/mutual-funds-banner.jpg);
+  height: 500px;
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-size:cover;    
+}
+
+#container {
+  margin: 10 auto;
+  padding: 100px;
+  padding-left: 550px;
+  position: relative;
+}
