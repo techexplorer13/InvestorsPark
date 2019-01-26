@@ -1,13 +1,27 @@
 .panel{
 
     overflow:scroll;
-    height:300px;
+    height:200px;
     width:400px;
-    text-align: center;
-    position: relative;
+    position: absolute;
 
 }
 
 .myValue li:hover { 
-    background-color:rgb(0, 102, 255);
+    background-color:rgb(255, 81, 0);
   }
+
+.headingStyle{
+    height:100px;
+    width:350px;
+    position: relative;
+}
+
+.mydiv{
+    height:400px;
+    width:450px;
+    position: relative;
+    padding-top: 0px;
+}
+
+

@@ -1,10 +1,15 @@
 
-<div [ngClass]="'panel'" id="style-1">
-<ul  class="list-group">
-  <div class="myValue">
-    <li *ngFor="let name of mutualFundName,let index = index" class="list-group-item">
-      {{name}}
-    </li>
-  </div>
-</ul></div>
-
+<div [ngClass]="'mydiv'">
+<div [ngClass]="'headingStyle'">
+<h1>Please select from below funds</h1>
+</div>
+<div [ngClass]="'panel'">
+    <ul class="list-group">
+      <div class="myValue">
+        <li *ngFor="let name of mutualFundName,let index = index" class="list-group-item">
+          {{name}}
+        </li>
+      </div>
+    </ul>
+</div>
+</div>
