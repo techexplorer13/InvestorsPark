@@ -6,7 +6,7 @@
 <div [ngClass]="'panel'">
     <ul class="list-group">
       <div class="myValue">
-        <li *ngFor="let name of mutualFundName,let index = index" class="list-group-item">
+        <li *ngFor="let name of mutualFundName" class="list-group-item" (click)="getallfunds(name)">
           {{name}}
         </li>
       </div>

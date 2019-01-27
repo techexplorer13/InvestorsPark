@@ -10,9 +10,12 @@ import { DropdownDirective } from './dropdown.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { AllmutualfundComponent } from './dashboard/allmutualfund/allmutualfund.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FooterComponent } from './footer/footer.component';
+import { MutualFundNamesComponent } from './dashboard/allmutualfund/mutual-fund-names/mutual-fund-names.component';
 
 const appRoutes:Routes=[
-  {path:'allmutualfund',component:AllmutualfundComponent}
+  {path:'allmutualfund',component:AllmutualfundComponent},
+  {path:'mutualfundinfo',component:MutualFundNamesComponent}
 ];
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ const appRoutes:Routes=[
     TopicsNavComponent,
     DropdownDirective,
     AllmutualfundComponent,
-    DashboardComponent
+    DashboardComponent,
+    FooterComponent,
+    MutualFundNamesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,8 @@
+<div [ngClass]="'panel'">
+    <table>
+        <tr *ngFor="let mutualFund of mutualFundInfo">
+          <td>{{ mutualFund.SchemeName }}</td>
+          <td>{{ mutualFund.NetAssetValue }}</td>
+        </tr>
+    </table>
+</div>
