@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/internal/Observable';
 @Component({
   selector: 'app-mutual-fund-names',
   templateUrl: './mutual-fund-names.component.html',
-  styleUrls: ['./mutual-fund-names.component.css']
+  styleUrls: ['./mutual-fund-names.component.css','../allmutualfund.component.css']
 })
 export class MutualFundNamesComponent implements OnInit {
   

@@ -4,6 +4,7 @@
 <h3>Please select from below funds</h3>
 </div>
 <div [ngClass]="'panel'">
+  <div>
     <ul class="list-group">
       <div class="myValue">
         <li *ngFor="let name of mutualFundName" class="list-group-item" (click)="getallfunds(name)">
@@ -11,5 +12,7 @@
         </li>
       </div>
     </ul>
+  </div>
+  <div *ngIf="!show" class="loader"></div>
 </div>
 </div>

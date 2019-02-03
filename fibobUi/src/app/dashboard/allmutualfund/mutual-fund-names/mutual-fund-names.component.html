@@ -1,4 +1,5 @@
 <div [ngClass]="'panel'">
+    <div>
     <table  class="table">
         <thead>
             <tr>
@@ -9,7 +10,9 @@
         <tr *ngFor="let mutualFund of mutualFundInfo">
           <td align="left">{{ mutualFund.SchemeName }}</td>
           <td>{{ mutualFund.NetAssetValue }}</td>
-        </tr>
+       </tr>
     </table>
+    </div>
+    <div *ngIf="!show" class="loader"></div>
   </div>
 
