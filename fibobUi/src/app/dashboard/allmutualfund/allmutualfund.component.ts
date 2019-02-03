@@ -21,7 +21,6 @@ export class AllmutualfundComponent implements OnInit {
   } 
 
   getallfunds(fundhouse: string) {
-    alert(fundhouse);
     this.router.navigate(['/mutualfundinfo', { fundhouse: fundhouse}]);
   }
 

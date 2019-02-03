@@ -13,6 +13,7 @@ export class MutualFundNamesComponent implements OnInit {
   
   private fundHouse:string;
   private mutualFundInfo:Observable<any>[];
+  show:boolean=false;
 
   constructor(private restService:SearchByFundHouse, private route: ActivatedRoute) { 
     
@@ -26,6 +27,7 @@ export class MutualFundNamesComponent implements OnInit {
       
     return this.restService.getFundNamesFromFundHouse(this.fundHouse).subscribe(val => {
         this.mutualFundInfo=val;
+        this.show=true;
       });
   }
 }
