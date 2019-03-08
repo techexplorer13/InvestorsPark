@@ -15,3 +15,14 @@
     position: absolute;
     top:10px;
 }
+
+.panelFunds{
+
+    overflow:scroll;
+    height:300px;
+    width:400px;
+    position: absolute;
+    top:40px;
+    background-color: white;    
+    z-index : 1;
+}

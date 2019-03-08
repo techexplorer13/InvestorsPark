@@ -1,9 +1,9 @@
 <div [ngClass]="'searchPanel'">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" (keyup)="onKeySearch(keywordSearchElement.value)" #keywordSearchElement>
-      <div class="dropdown-menu show" *ngIf="showSuggestionAvailableDropdown">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search your fund" (keyup)="onKeySearch(keywordSearchElement.value)" #keywordSearchElement>
+      <div [ngClass]="'panelFunds'" class="dropdown-menu show" *ngIf="showSuggestionAvailableDropdown">
         <ul>
           <ng-container *ngFor="let mutualfund of matchMutualFund; let i = index">
-            <li >
+            <li>
               {{mutualfund.SchemeName}}
             </li>
           </ng-container>
