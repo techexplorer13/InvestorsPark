@@ -12,6 +12,7 @@ import { AllmutualfundComponent } from './dashboard/allmutualfund/allmutualfund.
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FooterComponent } from './footer/footer.component';
 import { MutualFundNamesComponent } from './dashboard/allmutualfund/mutual-fund-names/mutual-fund-names.component';
+import { FormsComponent } from './dashboard/forms/forms.component';
 
 const appRoutes:Routes=[
   {path:'allmutualfund',component:AllmutualfundComponent},
@@ -27,7 +28,8 @@ const appRoutes:Routes=[
     AllmutualfundComponent,
     DashboardComponent,
     FooterComponent,
-    MutualFundNamesComponent
+    MutualFundNamesComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,

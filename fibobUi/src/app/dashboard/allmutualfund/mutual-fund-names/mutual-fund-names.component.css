@@ -5,6 +5,13 @@
     width:400px;
     position: absolute;
     top:50px;
-
+    z-index : 0;
 }
 
+.searchPanel{
+
+    height:30px;
+    width:400px;
+    position: absolute;
+    top:10px;
+}
