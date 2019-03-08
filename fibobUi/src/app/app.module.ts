@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -13,12 +13,26 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FooterComponent } from './footer/footer.component';
 import { MutualFundNamesComponent } from './dashboard/allmutualfund/mutual-fund-names/mutual-fund-names.component';
 import { FormsComponent } from './dashboard/forms/forms.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatRippleModule
+} from '@angular/material'; 
 
 const appRoutes:Routes=[
   {path:'allmutualfund',component:AllmutualfundComponent},
   {path:'mutualfundinfo',component:MutualFundNamesComponent}
 ];
 @NgModule({
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  exports: [
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRippleModule,
+  ],
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -34,10 +48,15 @@ const appRoutes:Routes=[
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } 
-    )
+    ),
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

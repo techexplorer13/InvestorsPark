@@ -4,6 +4,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs/internal/Observable';
 import { mutualFundInfo } from 'src/app/entity/mutualfundInfo';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-mutual-fund-names',
@@ -34,6 +35,8 @@ export class MutualFundNamesComponent implements OnInit {
       }
     
   }
+
+
   ngOnInit() {
     this.route.paramMap.subscribe((params:ParamMap)=>{
       this.fundHouse = params.get('fundhouse');
