@@ -16,8 +16,8 @@ export class MutualFundNamesComponent implements OnInit {
   private listMutualFundInfo:Array<mutualFundInfo>;
   show:boolean=false;
   private matchMutualFund:Array<mutualFundInfo>;
+  private dynamicFilterAndAllMutualFund:Array<mutualFundInfo>;
   private schemeName:String;
-  showSuggestionAvailableDropdown: boolean;
   
   constructor(private restService:SearchByFundHouse, private route: ActivatedRoute) { 
     
@@ -27,10 +27,10 @@ export class MutualFundNamesComponent implements OnInit {
     this.matchMutualFund=this.listMutualFundInfo.filter(response=> 
       response.SchemeName.toLowerCase().includes(searchtext.toLowerCase()));
       if(searchtext.length===0){
-        this.showSuggestionAvailableDropdown=false;
+        this.dynamicFilterAndAllMutualFund=this.listMutualFundInfo
       }
       else{
-      this.showSuggestionAvailableDropdown=true;
+      this.dynamicFilterAndAllMutualFund=this.matchMutualFund;
       }
     
   }
@@ -44,6 +44,7 @@ export class MutualFundNamesComponent implements OnInit {
 
     (response: Array<mutualFundInfo>) => {
       this.listMutualFundInfo = response;
+      this.dynamicFilterAndAllMutualFund=response;
       this.show=true;
     },
     error => {console.log(error);}

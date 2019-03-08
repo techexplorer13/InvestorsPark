@@ -1,14 +1,5 @@
 <div [ngClass]="'searchPanel'">
       <input class="form-control mr-sm-2" type="text" placeholder="Search your fund" (keyup)="onKeySearch(keywordSearchElement.value)" #keywordSearchElement>
-      <div [ngClass]="'panelFunds'" class="dropdown-menu show" *ngIf="showSuggestionAvailableDropdown">
-        <ul>
-          <ng-container *ngFor="let mutualfund of matchMutualFund; let i = index">
-            <li>
-              {{mutualfund.SchemeName}}
-            </li>
-          </ng-container>
-        </ul>
-      </div>
 </div>
 
 <div [ngClass]="'panel'">
@@ -20,7 +11,7 @@
               <th scope="col">Nav</th>
             </tr>
         </thead>
-        <tr *ngFor="let mutualFund of listMutualFundInfo">
+        <tr *ngFor="let mutualFund of dynamicFilterAndAllMutualFund">
           <td align="left">{{ mutualFund.SchemeName }}</td>
           <td>{{ mutualFund.NetAssetValue }}</td>
        </tr>
