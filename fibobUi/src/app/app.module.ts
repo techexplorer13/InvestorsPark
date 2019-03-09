@@ -18,8 +18,10 @@ import {
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
-  MatRippleModule
-} from '@angular/material'; 
+  MatRippleModule,
+  MatTableModule 
+} from '@angular/material';
+import { SipregistrationformsComponent } from './dashboard/forms/sipregistrationforms/sipregistrationforms.component'; 
 
 const appRoutes:Routes=[
   {path:'allmutualfund',component:AllmutualfundComponent},
@@ -32,6 +34,7 @@ const appRoutes:Routes=[
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
+    MatTableModule
   ],
   declarations: [
     AppComponent,
@@ -43,7 +46,8 @@ const appRoutes:Routes=[
     DashboardComponent,
     FooterComponent,
     MutualFundNamesComponent,
-    FormsComponent
+    FormsComponent,
+    SipregistrationformsComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +61,7 @@ const appRoutes:Routes=[
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
+    MatTableModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

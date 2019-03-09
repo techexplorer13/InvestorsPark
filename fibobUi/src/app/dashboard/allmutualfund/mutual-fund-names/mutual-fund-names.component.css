@@ -1,11 +1,14 @@
-.panel{
+.fundspanel{
 
     overflow:scroll;
     height:300px;
-    width:400px;
+    width:1000px;
     position: absolute;
     top:80px;
     z-index : 0;
+    left: 320px;
+    background-color: white;
+    overflow-x: hidden;
 }
 
 .searchPanel{
@@ -30,3 +33,14 @@
 ul{
     list-style-type: none
 }
+
+.mat-header-cell {
+    font-size: 20px;
+}
+
+.mat-cell,
+.mat-header-cell
+{
+flex: 0 0 70%;
+}
+

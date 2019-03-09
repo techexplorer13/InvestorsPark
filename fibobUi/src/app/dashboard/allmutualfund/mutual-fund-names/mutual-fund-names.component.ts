@@ -4,7 +4,6 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs/internal/Observable';
 import { mutualFundInfo } from 'src/app/entity/mutualfundInfo';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-mutual-fund-names',
@@ -19,6 +18,7 @@ export class MutualFundNamesComponent implements OnInit {
   private matchMutualFund:Array<mutualFundInfo>;
   private dynamicFilterAndAllMutualFund:Array<mutualFundInfo>;
   private schemeName:String;
+  displayedColumns: string[] = ['SchemeName', 'NetAssetValue'];
   
   constructor(private restService:SearchByFundHouse, private route: ActivatedRoute) { 
     
