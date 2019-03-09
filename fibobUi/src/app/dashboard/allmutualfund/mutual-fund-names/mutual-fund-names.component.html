@@ -7,32 +7,22 @@
 <div [ngClass]="'fundspanel'">
     <div>
     <mat-table   [dataSource]="dynamicFilterAndAllMutualFund" class="mat-elevation-z8">
-      <!-- Position Column -->
+      <!-- Scheme Column -->
   <ng-container matColumnDef="SchemeName">
       <mat-header-cell *matHeaderCellDef> Fund Names </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.SchemeName}} </mat-cell>
+      <mat-cell *matCellDef="let element" > {{element.SchemeName}} </mat-cell>
     </ng-container>
   
-    <!-- Name Column -->
+    <!-- NAV Column -->
     <ng-container matColumnDef="NetAssetValue">
       <mat-header-cell  *matHeaderCellDef> Net Asset Value </mat-header-cell>
       <mat-cell  *matCellDef="let element"> {{element.NetAssetValue}} </mat-cell>
     </ng-container>
-      <!--  <thead>
-            <tr>
-              <th scope="col">Fund Name</th>
-              <th scope="col">Nav</th>
-            </tr>
-        </thead>
-        <tr *ngFor="let mutualFund of dynamicFilterAndAllMutualFund" title="Click to Register SIP">
-          <td align="left">{{ mutualFund.SchemeName }}</td>
-          <td>{{ mutualFund.NetAssetValue }}</td>
-       </tr> -->
-       <mat-header-row *matHeaderRowDef="displayedColumns;sticky: true"></mat-header-row>
-       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <mat-header-row *matHeaderRowDef="displayedColumns;sticky: true"></mat-header-row>
+    <mat-row title="click to register for SIP" *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
     </div>
-    <div *ngIf="!show" class="loader"></div>
+    <mat-progress-bar *ngIf="!show"  mode="indeterminate"></mat-progress-bar>
   </div>
   
   

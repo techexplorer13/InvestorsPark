@@ -19,7 +19,8 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatRippleModule,
-  MatTableModule 
+  MatTableModule ,
+  MatProgressBarModule
 } from '@angular/material';
 import { SipregistrationformsComponent } from './dashboard/forms/sipregistrationforms/sipregistrationforms.component'; 
 
@@ -34,7 +35,8 @@ const appRoutes:Routes=[
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
-    MatTableModule
+    MatTableModule,
+    MatProgressBarModule
   ],
   declarations: [
     AppComponent,
@@ -61,7 +63,8 @@ const appRoutes:Routes=[
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
-    MatTableModule 
+    MatTableModule ,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
