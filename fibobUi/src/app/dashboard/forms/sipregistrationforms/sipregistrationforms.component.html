@@ -5,7 +5,7 @@
 <div class="registration-container">
     <mat-form-field>
         <mat-label>Select Scheme </mat-label>
-        <input matInput >
+        <input matInput [(ngModel)]=data.schemename>
     </mat-form-field>
     
       <mat-form-field>
@@ -20,8 +20,8 @@
 
       <mat-form-field>
           <mat-select>
-            <mat-option  *ngFor="let date of dates" [value]="date.value">
-              {{date.value}}
+            <mat-option  *ngFor="let date of dates" [value]="date">
+              {{date}}
             </mat-option>
           </mat-select>
       </mat-form-field>

@@ -18,7 +18,7 @@
       <mat-cell  *matCellDef="let element"> {{element.NetAssetValue}} </mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns;sticky: true"></mat-header-row>
-    <mat-row title="click to register for SIP" *matRowDef="let row; columns: displayedColumns;" (click)="openRegisterForm()"></mat-row>
+    <mat-row title="click to register for SIP" *matRowDef="let row; columns: displayedColumns;let i= index" (click)="openRegisterForm(i)"></mat-row>
     </mat-table>
     <mat-progress-bar *ngIf="!show"  mode="indeterminate"></mat-progress-bar>
 </div>

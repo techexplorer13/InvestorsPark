@@ -1,6 +1,6 @@
 export interface mutualFundInfo{
 
-    SchemeName:String;
+    SchemeName:string;
     NetAssetValue:String;
 
 }

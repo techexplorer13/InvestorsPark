@@ -59,13 +59,13 @@ export class MutualFundNamesComponent implements OnInit {
   
 }
 
-openRegisterForm():void{
+openRegisterForm(index:number):void{
   let data=new sipRegistrationDetailsData();
-  data.schemename=this.schemeName;
+  data.schemename=this.listMutualFundInfo[index].SchemeName
   const dialogRef = this.dialog.open(SipregistrationformsComponent, {
     width: '500px',
     height:'500px',
-    data: {data}
+    data: data
   });
 
 }
