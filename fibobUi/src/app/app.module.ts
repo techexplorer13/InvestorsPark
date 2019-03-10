@@ -14,14 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MutualFundNamesComponent } from './dashboard/allmutualfund/mutual-fund-names/mutual-fund-names.component';
 import { FormsComponent } from './dashboard/forms/forms.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {
-  MatButtonModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatRippleModule,
-  MatTableModule ,
-  MatProgressBarModule
-} from '@angular/material';
+import {MaterialModule} from 'src/app/material.module';
 import { SipregistrationformsComponent } from './dashboard/forms/sipregistrationforms/sipregistrationforms.component'; 
 
 const appRoutes:Routes=[
@@ -30,14 +23,6 @@ const appRoutes:Routes=[
 ];
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  exports: [
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatRippleModule,
-    MatTableModule,
-    MatProgressBarModule
-  ],
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -51,6 +36,9 @@ const appRoutes:Routes=[
     FormsComponent,
     SipregistrationformsComponent
   ],
+  entryComponents: [
+    SipregistrationformsComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -59,12 +47,7 @@ const appRoutes:Routes=[
       appRoutes,
       { enableTracing: true } 
     ),
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatRippleModule,
-    MatTableModule ,
-    MatProgressBarModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,29 @@
-<p>
-  sipregistrationforms works!
-</p>
+
+<h3>
+  SIP Registration
+</h3>
+<div class="registration-container">
+    <mat-form-field>
+        <mat-label>Select Scheme </mat-label>
+        <input matInput >
+    </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label>Select Frequency</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field>
+          <mat-label>Amount</mat-label>
+          <input matInput>
+      </mat-form-field>
+
+      <mat-form-field>
+          <mat-select>
+            <mat-option  *ngFor="let date of dates" [value]="date.value">
+              {{date.value}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+</div>
+

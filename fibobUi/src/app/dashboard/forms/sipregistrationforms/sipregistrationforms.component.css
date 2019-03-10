@@ -1,0 +1,8 @@
+.registration-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-container > * {
+    width: 100%;
+  }

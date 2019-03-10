@@ -4,6 +4,10 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs/internal/Observable';
 import { mutualFundInfo } from 'src/app/entity/mutualfundInfo';
+import {MatDialog, MatDialogRef, MatDialogModule,MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {SipregistrationformsComponent} from 'src/app/dashboard/forms/sipregistrationforms/sipregistrationforms.component';
+import { sipRegistrationDetailsData} from 'src/app/dashboard/forms/sipregistrationforms/sipRegistartionDetailsData';
+
 
 @Component({
   selector: 'app-mutual-fund-names',
@@ -17,10 +21,10 @@ export class MutualFundNamesComponent implements OnInit {
   show:boolean=false;
   private matchMutualFund:Array<mutualFundInfo>;
   private dynamicFilterAndAllMutualFund:Array<mutualFundInfo>;
-  private schemeName:String;
   displayedColumns: string[] = ['SchemeName', 'NetAssetValue'];
+  private schemeName:string;
   
-  constructor(private restService:SearchByFundHouse, private route: ActivatedRoute) { 
+  constructor(private restService:SearchByFundHouse, private route: ActivatedRoute,public dialog: MatDialog) { 
     
   }
   
@@ -53,4 +57,18 @@ export class MutualFundNamesComponent implements OnInit {
     error => {console.log(error);}
       );
   
-}}
+}
+
+openRegisterForm():void{
+  let data=new sipRegistrationDetailsData();
+  data.schemename=this.schemeName;
+  const dialogRef = this.dialog.open(SipregistrationformsComponent, {
+    width: '500px',
+    height:'500px',
+    data: {data}
+  });
+
+}
+}
+
+

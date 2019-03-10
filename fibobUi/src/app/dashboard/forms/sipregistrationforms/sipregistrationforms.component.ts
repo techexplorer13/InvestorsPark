@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
 
+import { Component, OnInit ,Input,Inject} from '@angular/core';
+import { sipRegistrationDetailsData} from 'src/app/dashboard/forms/sipregistrationforms/sipRegistartionDetailsData';
+import {MatDialog, MatDialogRef, MatDialogModule,MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material';
 @Component({
-  selector: 'app-sipregistrationforms',
-  templateUrl: './sipregistrationforms.component.html',
-  styleUrls: ['./sipregistrationforms.component.css']
-})
-export class SipregistrationformsComponent implements OnInit {
+    selector: 'dialog-overview-example-dialog',
+    templateUrl: 'sipregistrationforms.component.html',
+    styleUrls: ['./sipregistrationforms.component.css']
+  })
+  export class SipregistrationformsComponent {
+    
+    dates:String[]=["1","2","25"]
 
-  constructor() { }
 
-  ngOnInit() {
+    constructor(
+      public dialogRef: MatDialogRef<SipregistrationformsComponent>,
+      @Inject(MAT_DIALOG_DATA) public data: sipRegistrationDetailsData) {}
+  
   }
-
-}
