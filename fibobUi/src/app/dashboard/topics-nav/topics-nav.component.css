@@ -1,0 +1,20 @@
+.nav {
+    background-color:white;
+    min-height: 50px;
+    height: auto;
+  }
+
+  nav li{
+
+   background-color:white;
+   width: 180px
+  }
+
+.container{
+  float: left;
+}
+
+nav li a{
+
+ color:blue;
+ }

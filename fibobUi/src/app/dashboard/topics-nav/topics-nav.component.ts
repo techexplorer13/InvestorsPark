@@ -10,12 +10,13 @@ export class TopicsNavComponent implements OnInit {
   /**
    * parent options of nav br
    */
-  topics:string[]=["SIP Investment","Mutual Fund","About us"]
+  topics:string[]=["My Account","SIP Investment","Mutual Fund","About us"]
   /**
    * for mutual fund nav bar
    */
   mutualFundtopics:any[]=[["All Mutual Fund","/allmutualfund"]];
   sipTopics:any[]=[["Recommended Funds",""],["Equity Funds",""],["Debt Fund",""]];
+  myAccount:any[]=[["Login",""]];
 
   selectedNavBar:any[];
 
@@ -30,6 +31,9 @@ export class TopicsNavComponent implements OnInit {
     }
     if(topic=="SIP Investment"){
       this.selectedNavBar=this.sipTopics;
+    }
+    if(topic=="My Account"){
+      this.selectedNavBar=this.myAccount;
     }
   }
 }

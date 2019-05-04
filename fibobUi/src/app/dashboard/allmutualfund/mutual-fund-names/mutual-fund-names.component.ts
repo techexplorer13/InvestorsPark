@@ -61,7 +61,7 @@ export class MutualFundNamesComponent implements OnInit {
 
 openRegisterForm(index:number):void{
   let data=new sipRegistrationDetailsData();
-  data.schemename=this.listMutualFundInfo[index].SchemeName
+  data.schemename=this.dynamicFilterAndAllMutualFund[index].SchemeName
   const dialogRef = this.dialog.open(SipregistrationformsComponent, {
     width: '500px',
     height:'500px',
