@@ -1,0 +1,21 @@
+<div class="loginform">
+<h3 class="labelcolor">
+    Login
+</h3>
+<form [formGroup]="loginFormVal" (ngSubmit)="onSubmit(loginFormVal.value)">
+<div class="registration-container">
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput  formControlName="email">
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput  formControlName="password">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+</div>
+</form>
+</div>
+

@@ -16,7 +16,7 @@ export class TopicsNavComponent implements OnInit {
    */
   mutualFundtopics:any[]=[["All Mutual Fund","/allmutualfund"]];
   sipTopics:any[]=[["Recommended Funds",""],["Equity Funds",""],["Debt Fund",""]];
-  myAccount:any[]=[["Login",""]];
+  myAccount:any[]=[["Login","/login"]];
 
   selectedNavBar:any[];
 

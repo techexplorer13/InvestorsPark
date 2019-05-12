@@ -1,0 +1,9 @@
+.registration-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+:host ::ng-deep .mat-raised-button{
+    width:25%
+}

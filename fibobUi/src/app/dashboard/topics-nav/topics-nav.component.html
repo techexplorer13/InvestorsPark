@@ -9,7 +9,7 @@
         </a>
         <ul class="dropdown-menu"  *ngIf="topic=='Mutual Fund' || topic=='SIP Investment' || topic=='My Account'">
           <li  class="container" *ngFor="let mutualFundtopic of selectedNavBar">
-              <a [routerLink]="mutualFundtopic[1]">{{mutualFundtopic[0]}}</a>
+              <a class="labelcolor" [routerLink]="mutualFundtopic[1]">{{mutualFundtopic[0]}}</a>
           </li>
        </ul>
       </li>

@@ -1,5 +1,4 @@
-.myPageTitle{
-    color: blue
-
+:host ::ng-deep .labelcolor{
+   color :#5680e9
 }
 

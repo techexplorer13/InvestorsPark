@@ -5,16 +5,10 @@
   }
 
   nav li{
-
-   background-color:white;
+  background-color:white;
    width: 180px
   }
 
 .container{
   float: left;
 }
-
-nav li a{
-
- color:blue;
- }

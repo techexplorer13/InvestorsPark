@@ -2,6 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import {AngularFireAuthModule} from '@angular/fire/auth'
+import { environment } from '../environments/environment';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -17,10 +22,13 @@ import { FormsComponent } from './dashboard/forms/forms.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from 'src/app/material.module';
 import { SipregistrationformsComponent } from './dashboard/forms/sipregistrationforms/sipregistrationforms.component'; 
+import { LoginformComponent } from './dashboard/forms/loginform/loginform.component';
+
 
 const appRoutes:Routes=[
   {path:'allmutualfund',component:AllmutualfundComponent},
-  {path:'mutualfundinfo',component:MutualFundNamesComponent}
+  {path:'mutualfundinfo',component:MutualFundNamesComponent},
+  {path:'login',component:LoginformComponent}
 ];
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
@@ -35,12 +43,16 @@ const appRoutes:Routes=[
     FooterComponent,
     MutualFundNamesComponent,
     FormsComponent,
-    SipregistrationformsComponent
+    SipregistrationformsComponent,
+    LoginformComponent
   ],
   entryComponents: [
     SipregistrationformsComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
+     AngularFirestoreModule,
+     AngularFireAuthModule,
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -49,7 +61,8 @@ const appRoutes:Routes=[
       { enableTracing: true } 
     ),
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
