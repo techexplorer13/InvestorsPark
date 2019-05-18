@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private test:String) { }
 
   ngOnInit() {
   }
