@@ -7,6 +7,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import {AngularFireAuthModule} from '@angular/fire/auth'
 import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -23,6 +24,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from 'src/app/material.module';
 import { SipregistrationformsComponent } from './dashboard/forms/sipregistrationforms/sipregistrationforms.component'; 
 import { LoginformComponent } from './dashboard/forms/loginform/loginform.component';
+import {SignupformComponent} from 'src/app/dashboard/forms/signupform/signupform.component';
 
 
 const appRoutes:Routes=[
@@ -44,15 +46,17 @@ const appRoutes:Routes=[
     MutualFundNamesComponent,
     FormsComponent,
     SipregistrationformsComponent,
-    LoginformComponent
+    LoginformComponent,
+    SignupformComponent
   ],
   entryComponents: [
     SipregistrationformsComponent,
+    SignupformComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
-     AngularFirestoreModule,
-     AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -62,7 +66,8 @@ const appRoutes:Routes=[
     ),
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

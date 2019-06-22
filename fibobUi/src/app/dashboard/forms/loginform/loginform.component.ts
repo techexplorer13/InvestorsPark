@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute ,Router} from '@angular/router';
 import {AuthService} from 'src/app/services/auth.service';
-import {FormBuilder,FormGroup, FormControl} from '@angular/forms';
+import {FormGroup, FormControl} from '@angular/forms';
+import { LoginService } from 'src/app/services/login.service';
+import {MatDialog} from '@angular/material/dialog';
+import {SignupformComponent} from 'src/app/dashboard/forms/signupform/signupform.component';
+
 
 @Component({
   selector: 'app-loginform',
@@ -11,19 +15,46 @@ import {FormBuilder,FormGroup, FormControl} from '@angular/forms';
 export class LoginformComponent implements OnInit {
   
   loginFormVal:FormGroup;
+  authmessage:string;
+ 
 
-  constructor(private route: ActivatedRoute,private authservice:AuthService) { 
+  constructor(private route: ActivatedRoute,private authservice:AuthService,
+    private loginService:LoginService,private router: Router,public dialog: MatDialog) { 
+
     this.loginFormVal=new FormGroup({
       email:new FormControl(),
       password:new FormControl()
   })
+  
   }
 
   ngOnInit() {
   }
 
   onSubmit(value){
-    this.authservice.authenticate(value.email,value.password);
-  }
+  this.authservice.authenticate(value.email,value.password).then(
+     res=>{
+      this.router.navigate(['/']);
+      this.authmessage="Welcome "+ value.email;
+      alert(this.authmessage);
+     },
+     err=>{
+      this.router.navigate(['/login']);
+      this.authmessage="Authetication Error !!";
+      alert(this.authmessage);
+     },
+  );
+}
+
+
+openSignUpForm():void{
+
+  const dialogRef = this.dialog.open(SignupformComponent, {
+    width: '500px',
+    height:'500px',
+  });
+
+
+}
 
 }

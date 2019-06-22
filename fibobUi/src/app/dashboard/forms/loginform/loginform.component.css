@@ -3,14 +3,9 @@
    width: 70%;
 }
 
-.login-container
-{
-position: absolute;
-padding-top: 300px;
-}
 
 .loginform{
-    width:600px
+    width:540px;
 }
 .loginform>h3{
     text-align: left;

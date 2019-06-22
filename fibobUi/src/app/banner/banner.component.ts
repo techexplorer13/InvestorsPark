@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {user} from 'src/app/entity/user';
 
 @Component({
   selector: 'app-banner',
@@ -11,5 +12,4 @@ export class BannerComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

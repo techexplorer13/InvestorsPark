@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component ,ViewChild} from '@angular/core';
+import { BannerComponent } from './banner/banner.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  @ViewChild(BannerComponent)
+  private bannerComponent: BannerComponent;
+
   title = 'Financial Bob';
+
+  
 }
