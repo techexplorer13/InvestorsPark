@@ -30,7 +30,7 @@ import {SignupformComponent} from 'src/app/dashboard/forms/signupform/signupform
 const appRoutes:Routes=[
   {path:'allmutualfund',component:AllmutualfundComponent},
   {path:'mutualfundinfo',component:MutualFundNamesComponent},
-  {path:'login',component:LoginformComponent}
+  {path:'login',component:LoginformComponent},
 ];
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

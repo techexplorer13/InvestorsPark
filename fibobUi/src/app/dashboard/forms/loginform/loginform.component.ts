@@ -1,10 +1,11 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit,EventEmitter,Output} from '@angular/core';
 import { ActivatedRoute ,Router} from '@angular/router';
 import {AuthService} from 'src/app/services/auth.service';
 import {FormGroup, FormControl} from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
 import {MatDialog} from '@angular/material/dialog';
 import {SignupformComponent} from 'src/app/dashboard/forms/signupform/signupform.component';
+import { DataService } from 'src/app/services/data.service';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class LoginformComponent implements OnInit {
  
 
   constructor(private route: ActivatedRoute,private authservice:AuthService,
-    private loginService:LoginService,private router: Router,public dialog: MatDialog) { 
+    private loginService:LoginService,private router: Router,public dialog: MatDialog,
+    private data:DataService) { 
 
     this.loginFormVal=new FormGroup({
       email:new FormControl(),
@@ -34,9 +36,9 @@ export class LoginformComponent implements OnInit {
   onSubmit(value){
   this.authservice.authenticate(value.email,value.password).then(
      res=>{
-      this.router.navigate(['/']);
       this.authmessage="Welcome "+ value.email;
       alert(this.authmessage);
+      this.data.changeMessage(true);
      },
      err=>{
       this.router.navigate(['/login']);
@@ -48,13 +50,10 @@ export class LoginformComponent implements OnInit {
 
 
 openSignUpForm():void{
-
   const dialogRef = this.dialog.open(SignupformComponent, {
     width: '500px',
     height:'500px',
   });
-
-
 }
 
 }

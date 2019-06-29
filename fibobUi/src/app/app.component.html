@@ -3,7 +3,7 @@
   <h1 class="labelcolor">
     Welcome to {{ title }}!
   </h1>
-  <app-topics-nav></app-topics-nav>
-  <app-banner></app-banner>
+  <app-topics-nav *ngIf="isUserAuthenticated()"></app-topics-nav>
+  <app-banner [isAuth]="isUserAuthenticated()"></app-banner>
   <app-footer></app-footer>
 </div>
