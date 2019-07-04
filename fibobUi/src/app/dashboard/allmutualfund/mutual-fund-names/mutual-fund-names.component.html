@@ -3,7 +3,6 @@
       <input matInput placeholder="Search your fund" (keyup)="onKeySearch(keywordSearchElement.value)" #keywordSearchElement>
     </mat-form-field>
 </div>
-
 <div [ngClass]="'fundspanel'">
     <mat-table   [dataSource]="dynamicFilterAndAllMutualFund" class="mat-elevation-z8">
       <!-- Scheme Column -->

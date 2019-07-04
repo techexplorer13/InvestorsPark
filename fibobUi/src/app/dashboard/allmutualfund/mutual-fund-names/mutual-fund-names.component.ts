@@ -27,7 +27,7 @@ export class MutualFundNamesComponent implements OnInit {
   constructor(private restService:SearchByFundHouse, private route: ActivatedRoute,public dialog: MatDialog) { 
     
   }
-  
+
   onKeySearch(searchtext:String){
     this.matchMutualFund=this.listMutualFundInfo.filter(response=> 
       response.SchemeName.toLowerCase().includes(searchtext.toLowerCase()));
