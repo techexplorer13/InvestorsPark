@@ -1,7 +1,6 @@
-import { Component ,ViewChild} from '@angular/core';
-import { BannerComponent } from './banner/banner.component';
+import { Component } from '@angular/core';
 import { ActivatedRoute ,Router,ParamMap} from '@angular/router';
-import {DataService} from 'src/app/services/data.service'
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -13,18 +12,18 @@ export class AppComponent {
   title = 'Financial Bob';
   isAuth:Boolean;
 
-  constructor(private router: Router,private route: ActivatedRoute,private data: DataService){
+  constructor(private router: Router,private route: ActivatedRoute,private authService: AuthService){
     this.isAuth=false;
   }
 
   ngOnInit(){
-    this.data.currentMessage.subscribe(message => this.isAuth = message)
+    this.authService.isLoggedIn().subscribe(message => this.isAuth = message)
     if(this.isAuth==false){
     this.router.navigate(['/login']);
     }
   }
 
   isUserAuthenticated(){
-    return this.isAuth;
+    return this.isAuth
   }
 }

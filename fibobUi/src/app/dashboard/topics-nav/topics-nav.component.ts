@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {AuthService} from 'src/app/services/auth.service'
 
 @Component({
   selector: 'app-topics-nav',
@@ -16,11 +17,11 @@ export class TopicsNavComponent implements OnInit {
    */
   mutualFundtopics:any[]=[["All Mutual Fund","/allmutualfund"]];
   sipTopics:any[]=[["Recommended Funds",""],["Equity Funds",""],["Debt Fund",""]];
-  myAccount:any[]=null;
+  myAccount:any[]=[["Logout","/login"]];
 
   selectedNavBar:any[];
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private authservice:AuthService) { }
 
   ngOnInit() {
   }
@@ -34,6 +35,13 @@ export class TopicsNavComponent implements OnInit {
     }
     if(topic=="My Account"){
       this.selectedNavBar=this.myAccount;
+    }
+  }
+
+  doPreTask(routerlink:string){
+    if(routerlink=="Logout"){
+        console.log("enter signout")
+        this.authservice.signout();
     }
   }
 }

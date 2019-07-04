@@ -25,12 +25,13 @@ import {MaterialModule} from 'src/app/material.module';
 import { SipregistrationformsComponent } from './dashboard/forms/sipregistrationforms/sipregistrationforms.component'; 
 import { LoginformComponent } from './dashboard/forms/loginform/loginform.component';
 import {SignupformComponent} from 'src/app/dashboard/forms/signupform/signupform.component';
+import {LoginGuard} from 'src/app/guard/auth/auth.guard';
 
 
 const appRoutes:Routes=[
   {path:'allmutualfund',component:AllmutualfundComponent},
   {path:'mutualfundinfo',component:MutualFundNamesComponent},
-  {path:'login',component:LoginformComponent},
+  {path:'login',component:LoginformComponent, canActivate: [LoginGuard]}
 ];
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
