@@ -22,10 +22,12 @@ import { MutualFundNamesComponent } from './dashboard/allmutualfund/mutual-fund-
 import { FormsComponent } from './dashboard/forms/forms.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from 'src/app/material.module';
+import { MatDatepickerModule,MatNativeDateModule } from '@angular/material';
 import { SipregistrationformsComponent } from './dashboard/forms/sipregistrationforms/sipregistrationforms.component'; 
 import { LoginformComponent } from './dashboard/forms/loginform/loginform.component';
 import {SignupformComponent} from 'src/app/dashboard/forms/signupform/signupform.component';
 import {LoginGuard} from 'src/app/guard/auth/auth.guard';
+import { AuthService } from './services/auth.service';
 
 
 const appRoutes:Routes=[
@@ -60,17 +62,18 @@ const appRoutes:Routes=[
     AngularFireAuthModule,
     BrowserModule,
     HttpClientModule,
+    MatDatepickerModule,
     BrowserAnimationsModule,
+    MatNativeDateModule,
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } 
+      appRoutes
     ),
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
     AngularFireDatabaseModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

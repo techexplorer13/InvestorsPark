@@ -17,10 +17,25 @@ export class AppComponent {
   }
 
   ngOnInit(){
-    this.authService.isLoggedIn().subscribe(message => this.isAuth = message)
-    if(this.isAuth==false){
-    this.router.navigate(['/login']);
+    console.log("Inside ngoninit appcomponent")
+    /**
+     * using local storage because on reload value is lost
+     */
+    let isLocalStorageIsAuth = localStorage.getItem("isAuth")=='true'?true:false;
+    if(isLocalStorageIsAuth!=null){
+        console.log("isLocalStorageIsAuth====>"+isLocalStorageIsAuth)
+        this.authService.changeMessage(isLocalStorageIsAuth);
     }
+    this.authService.currentMessage.subscribe(message =>{
+      console.log("Inside ngoninit appcomponent isLoggedIn call()====>"+message)
+      this.isAuth = message;
+      console.log("Inside ngoninit appcomponent isLoggedIn call()====>"+message)
+      if(this.isAuth==false){
+        this.router.navigate(['/login']);
+      }
+    });
+
+    console.log("Inside ngoninit appcomponent isAuth-==>"+this.isAuth)
   }
 
   isUserAuthenticated(){

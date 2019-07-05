@@ -13,10 +13,13 @@ export class LoginGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    this.authService.isLoggedIn().toPromise().then(value=>{
+    console.log("Inside CanActivate LoginGuard==>"+this.isAuth)
+
+    this.authService.currentMessage.subscribe(value=>{
       this.isAuth=value;
     });
     
+    console.log("Inside CanActivate LoginGuard==>"+this.isAuth)
     return this.checkEligibiltyForLogin();
   } 
 

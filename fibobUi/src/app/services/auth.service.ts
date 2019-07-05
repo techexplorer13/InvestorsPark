@@ -4,9 +4,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Router} from '@angular/router';
 
-@Injectable({
-    providedIn: 'root'
-  })
+@Injectable()
 export class AuthService{
   
 constructor(private afAuth:AngularFireAuth,private router: Router){
@@ -16,17 +14,10 @@ private isAuth = new BehaviorSubject<boolean>(false);
 currentMessage = this.isAuth.asObservable();
 
 changeMessage(message: boolean) {
+    console.log("Inside change message()")
     this.isAuth.next(message)
-  }
-
-  public isLoggedIn(){
-     this.afAuth.idToken.subscribe(message=>{
-       if(message){
-         this.changeMessage(true)
-       }
-     })
-      return this.currentMessage
-  }
+    localStorage.setItem("isAuth", message.toString());
+}
 
 authenticate(email:string,password:string){
    return this.afAuth.auth.signInWithEmailAndPassword(email,password);

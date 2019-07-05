@@ -14,8 +14,10 @@ export class BannerComponent implements OnChanges {
   constructor(private router: Router,private route: ActivatedRoute) { }
 
   ngOnChanges() {
+    console.log("Inside ngonChnages Bannercomponent")
     if(this.isAuth==true){
         this.router.navigate(['/allmutualfund']);
     }
+    console.log("Inside ngonChnages Bannercomponent isAuTH=== "+this.isAuth)
   }
 }
