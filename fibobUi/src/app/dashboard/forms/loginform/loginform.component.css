@@ -10,3 +10,8 @@
 .loginform>h3{
     text-align: left;
 }
+
+.loginform>.errormessage>h1{
+    font-size: 23px;
+    text-align: left;
+}

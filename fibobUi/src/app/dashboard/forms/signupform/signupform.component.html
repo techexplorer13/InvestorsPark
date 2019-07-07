@@ -1,25 +1,26 @@
 <h3>
   Enter your details
 </h3>
-<form [formGroup]="signUpFormVal" (ngSubmit)="createAccount(signUpFormVal.value)"></form>
+<form [formGroup]="signUpFormVal" (ngSubmit)="createAccount(signUpFormVal.value)">
 <div class="registration-container">
     <mat-form-field>
         <mat-label>Name</mat-label>
-        <input matInput formControlName="name" >
+        <input matInput   formControlName="name" >
     </mat-form-field>
     <mat-form-field>
         <mat-label>Email</mat-label>
-        <input matInput formControlName="email">
+        <input matInput  formControlName="email">
     </mat-form-field>
     <mat-form-field>
         <mat-label>Password</mat-label>
-        <input matInput formControlName="password">
+        <input matInput  formControlName="password">
     </mat-form-field>
     <mat-form-field>
             <mat-label>Enter Date of Birth</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="date">>
+            <input matInput [matDatepicker]="picker" formControlName="date">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit">Sign Up</button>
 </div>
+</form>

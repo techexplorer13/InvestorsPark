@@ -1,5 +1,5 @@
 import { Component, OnInit,EventEmitter,Output} from '@angular/core';
-import { ActivatedRoute ,Router} from '@angular/router';
+import { ActivatedRoute ,Router,ParamMap} from '@angular/router';
 import {AuthService} from 'src/app/services/auth.service';
 import {FormGroup, FormControl} from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
@@ -16,6 +16,9 @@ export class LoginformComponent implements OnInit {
   
   loginFormVal:FormGroup;
   authmessage:string;
+  messageStatus:string;
+  signUpResult:string;
+  dialogRef;
  
 
   constructor(private route: ActivatedRoute,private authservice:AuthService,
@@ -32,6 +35,7 @@ export class LoginformComponent implements OnInit {
   }
 
   onSubmit(value){
+  if(value.email!=null && value.password!=null){
   this.authservice.authenticate(value.email,value.password).then(
      res=>{
       this.authmessage="Welcome "+ value.email;
@@ -43,14 +47,29 @@ export class LoginformComponent implements OnInit {
       alert(this.authmessage);
      },
   );
+  }
 }
 
 
 openSignUpForm():void{
-  const dialogRef = this.dialog.open(SignupformComponent, {
+  this.dialogRef = this.dialog.open(SignupformComponent, {
     width: '500px',
     height:'500px',
   });
+
+  this.dialogRef.afterClosed().subscribe(result=>{
+    console.log("inside dialogref afterclosing()")
+    this.signUpResult=result;
+    if(result=="success"){
+    this.messageStatus="Congrats !!!Registered Successfullyy.Please login with your emailId and password";
+    }
+    if(result=="failed"){
+      this.messageStatus="Error occured!! while signing up";
+    }
+  })
 }
 
+getStatusOfSignUp(){
+  return this.signUpResult=="success"?'green':'red';
+}
 }
