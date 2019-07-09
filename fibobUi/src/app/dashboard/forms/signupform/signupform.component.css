@@ -3,3 +3,11 @@
     flex-direction: column;
     text-align: center;
 }
+
+.registration-container>mat-form-field{
+    padding:10px
+}
+
+.alert{
+    padding: 0px
+}

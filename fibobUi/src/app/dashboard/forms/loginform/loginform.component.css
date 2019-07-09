@@ -1,11 +1,10 @@
-
-.registration-container>mat-form-field{
-   width: 70%;
+.registration-container>input{
+   width: 100%;
 }
-
 
 .loginform{
     width:540px;
+    padding-top: 30px;
 }
 .loginform>h3{
     text-align: left;
@@ -13,5 +12,27 @@
 
 .loginform>.errormessage>h1{
     font-size: 23px;
+    text-align: left;
+}
+
+.alert-danger {
+    
+    width: 100%;
+}
+
+.errormessage{
+    position: absolute;
+    top:7px;
+    width:350px;
+}
+
+.alert{
+    padding: 9px;
+}
+.form-field{
+    padding-top: 7px;
+}
+
+.form-button{
     text-align: left;
 }

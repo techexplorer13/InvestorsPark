@@ -22,7 +22,7 @@ import { MutualFundNamesComponent } from './dashboard/allmutualfund/mutual-fund-
 import { FormsComponent } from './dashboard/forms/forms.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from 'src/app/material.module';
-import { MatDatepickerModule,MatNativeDateModule } from '@angular/material';
+import { MatDatepickerModule,MatNativeDateModule, MatIconModule, MatPrefix, MatSuffix } from '@angular/material';
 import { SipregistrationformsComponent } from './dashboard/forms/sipregistrationforms/sipregistrationforms.component'; 
 import { LoginformComponent } from './dashboard/forms/loginform/loginform.component';
 import {SignupformComponent} from 'src/app/dashboard/forms/signupform/signupform.component';
@@ -65,6 +65,7 @@ const appRoutes:Routes=[
     MatDatepickerModule,
     BrowserAnimationsModule,
     MatNativeDateModule,
+    MatIconModule,
     RouterModule.forRoot(
       appRoutes
     ),

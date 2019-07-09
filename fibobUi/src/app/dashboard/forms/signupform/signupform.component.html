@@ -1,3 +1,9 @@
+<div class="formAlertBox">
+        <h4 *ngIf="this.formAlertMessage!=null" [ngClass]="'alert-danger'">
+                {{formAlertMessage}}
+        </h4>
+</div>
+<div class="signupform">
 <h3>
   Enter your details
 </h3>
@@ -5,22 +11,27 @@
 <div class="registration-container">
     <mat-form-field>
         <mat-label>Name</mat-label>
-        <input matInput   formControlName="name" >
+        <input matInput formControlName="name" >
+        <mat-error *ngIf="this.name.invalid">{{getErrorMessage("name")}}</mat-error>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Email</mat-label>
-        <input matInput  formControlName="email">
+        <input matInput formControlName="email">
+        <mat-error *ngIf="this.email.invalid">{{getErrorMessage("email")}}</mat-error>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Password</mat-label>
-        <input matInput  formControlName="password">
+        <input matInput [type]="'password'" formControlName="password">
+        <mat-error *ngIf="this.password.invalid">{{getErrorMessage("password")}}</mat-error>
     </mat-form-field>
     <mat-form-field>
             <mat-label>Enter Date of Birth</mat-label>
             <input matInput [matDatepicker]="picker" formControlName="date">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
+           <mat-error *ngIf="this.date.invalid">{{getErrorMessage("date")}}</mat-error>
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit">Sign Up</button>
 </div>
 </form>
+</div>
