@@ -3,7 +3,7 @@
   height: 500px;
   background-repeat: no-repeat;
   background-size:cover;  
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 13%;  
 }
