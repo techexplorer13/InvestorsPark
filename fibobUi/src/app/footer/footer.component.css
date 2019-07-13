@@ -1,0 +1,19 @@
+#footer {
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    height: 21%;
+}
+
+.footer-block {
+    margin: 20px 0;
+  }
+
+  .footer-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 6%;
+}

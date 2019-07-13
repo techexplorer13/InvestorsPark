@@ -3,6 +3,7 @@
     flex-direction: column;
     text-align: center;
     width:350px;
+    padding-top: 5%;
 }
 
 :host ::ng-deep .mat-raised-button{

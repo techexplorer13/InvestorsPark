@@ -78,6 +78,7 @@ export class LoginformComponent implements OnInit {
     if (this.signUpResult == "failed") {
       return 'alert alert-danger';
     }
+    return null;
   }
 
   flushValuesFromVariables(){

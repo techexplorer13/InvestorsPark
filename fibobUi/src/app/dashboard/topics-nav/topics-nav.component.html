@@ -1,18 +1,14 @@
-<nav class="nav">
-  <div class="container">
-    <ul class="nav navbar-nav">
-      <li *ngFor="let topic of topics" class="dropdown" appDropdown>
-        <a class="dropdown-toggle" data-toggle="dropdown" role="button" (mouseover)="setOptions(topic)" 
-         (mouseout)="setOptions(topic)">
-          {{topic}}
-          <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu"  *ngIf="topic=='Mutual Fund' || topic=='SIP Investment' || topic=='My Account'">
-          <li  class="container" *ngFor="let mutualFundtopic of selectedNavBar">
-              <a class="labelcolor" [routerLink]="mutualFundtopic[1]"  (click)="doPreTask(mutualFundtopic[0])">{{mutualFundtopic[0]}}</a>
-          </li>
-       </ul>
+<nav class="topicsnavbar navbar-expand-sm">
+  <ul class="topics_navbar-nav">
+      <li *ngFor="let topic of topics" class="nav-item" (mouseout)="setOptions(topic)" (mouseover)="setOptions(topic)">
+          <a class="dropdown-toggle labelcolor" data-toggle="dropdown">
+            {{topic}}
+          </a>
+          <ul class="nav-item-menu" *ngIf="topic=='Mutual Fund' || topic=='SIP Investment' || topic=='My Account'">
+            <li *ngFor="let mutualFundtopic of selectedNavBar">
+                <a class="dropdown-item labelcolor" [routerLink]="mutualFundtopic[1]"  (click)="doPreTask(mutualFundtopic[0])">{{mutualFundtopic[0]}}</a>
+            </li>
+         </ul>
       </li>
     </ul>
-  </div>
 </nav>

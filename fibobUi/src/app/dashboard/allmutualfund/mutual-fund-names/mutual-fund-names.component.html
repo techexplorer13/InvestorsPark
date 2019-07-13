@@ -1,9 +1,11 @@
+<div class="mutual-fund-panel">
 <div [ngClass]="'searchPanel'">
     <mat-form-field [style.width.px]=400>
       <input matInput placeholder="Search your fund" (keyup)="onKeySearch(keywordSearchElement.value)" #keywordSearchElement>
     </mat-form-field>
 </div>
-<div [ngClass]="'fundspanel'">
+<div class="parent-fundspanel">
+<div class="fundspanel">
     <mat-table   [dataSource]="dynamicFilterAndAllMutualFund" class="mat-elevation-z8">
       <!-- Scheme Column -->
   <ng-container matColumnDef="SchemeName">
@@ -20,6 +22,8 @@
     <mat-row title="click to register for SIP" *matRowDef="let row; columns: displayedColumns;let i= index" (click)="openRegisterForm(i)"></mat-row>
     </mat-table>
     <mat-progress-bar *ngIf="!show"  mode="indeterminate"></mat-progress-bar>
+</div>
+</div>
 </div>
   
   

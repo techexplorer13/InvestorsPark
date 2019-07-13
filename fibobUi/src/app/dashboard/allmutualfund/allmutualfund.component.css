@@ -1,27 +1,19 @@
 .panel{
-
-    overflow:scroll;
-    height:280px;
-    width:1000px;
-    position: absolute;
-    
-
+    overflow:auto;
+    height: 350px;
+    background-color: white
 }
-
 .myValue li:hover { 
     background-color:rgb(192, 192, 192);
-  }
+}
 
 .headingStyle{
-    height:50px;
-    font-size: 30px;
+    height: 50px;
     position: relative;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
 }
 
 .mydiv{
-    height:400px;
-    width:1000px;
-    position: absolute;
-    padding-top: 0px;
-    left: 320px;
+    padding-top: 5%;
+    position: relative;
 }

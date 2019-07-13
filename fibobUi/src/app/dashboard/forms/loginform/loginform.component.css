@@ -2,11 +2,7 @@
    width: 100%;
 }
 
-.loginform{
-    width:540px;
-    padding-top: 30px;
-}
-.loginform>h3{
+h3{
     text-align: left;
 }
 
@@ -15,24 +11,21 @@
     text-align: left;
 }
 
-.alert-danger {
-    
-    width: 100%;
-}
-
 .errormessage{
-    position: absolute;
-    top:7px;
     width:350px;
+    height: 50px;
 }
 
-.alert{
-    padding: 9px;
-}
 .form-field{
     padding-top: 7px;
+    height: 45px;
+    text-align: left;
+}
+.loginblock{
+    padding: 10%;
 }
 
-.form-button{
-    text-align: left;
+.loginform{
+    padding-left: 20%;
+    width: 75.2%;
 }

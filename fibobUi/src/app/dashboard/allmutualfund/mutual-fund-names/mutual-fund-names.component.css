@@ -1,22 +1,17 @@
 .fundspanel{
-
-    overflow:scroll;
-    height:300px;
-    width:1000px;
-    position: absolute;
-    top:80px;
-    z-index : 0;
-    left: 320px;
+    overflow: scroll;
+    height: 100%;
+    width: 100%;
     background-color: white;
     overflow-x: hidden;
 }
-
+.parent-fundspanel{
+    
+    height: 350px;
+    width: 850px;
+}
 .searchPanel{
-
-    height:30px;
-    width:400px;
-    position: absolute;
-    top:30px;
+    position: relative;
 }
 
 .panelFunds{
@@ -42,4 +37,8 @@ ul{
 .mat-header-cell
 {
 flex: 0 0 70%;
+}
+
+.mutual-fund-panel{
+    padding-top: 5%;
 }

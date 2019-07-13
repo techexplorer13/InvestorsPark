@@ -1,26 +1,31 @@
-<div class="loginform">
-<div class="errormessage">
-        <h4 [ngClass]="getStatusOfSignUp()" role="alert">
-                {{messageStatus}}
-        </h4>
-</div>
-<h3 class="labelcolor">
-    Login
-</h3>
-<form [formGroup]="loginFormVal" (ngSubmit)="onSubmit(loginFormVal.value)">
-<div class="registration-container">
-    <div class="form-field">
-    <input type="text" formControlName="email" class="form-control mb-4" placeholder="Email">
-    </div>
-    <div class="form-field">
-    <input type="text" formControlName="password" class="form-control mb-4" placeholder="Password">
-    </div>
-    <div class="form-field form-button">
-    <button mat-raised-button color="primary" type="submit">LOGIN</button>
-    </div>
-    <br>
-    <button mat-raised-button color="primary" (click)="openSignUpForm()">SIGNUP</button>
-</div>
-</form>
-</div>
+<div class="loginblock">
 
+        <div class="loginform">
+        <div class="errormessage">
+                <p [ngClass]="getStatusOfSignUp()">
+                                {{messageStatus}}
+                </p>
+        </div>
+        <form class="registration-container" [formGroup]="loginFormVal" (ngSubmit)="onSubmit(loginFormVal.value)">
+                        <h3 class="labelcolor">
+                                Login
+                        </h3>
+                        <div class="form-field">
+                                <input type="text" formControlName="email" class="form-control mb-4"
+                                        placeholder="Email">
+                        </div>
+                        <div class="form-field">
+                                <input type="text" formControlName="password" class="form-control mb-4"
+                                        placeholder="Password">
+                        </div>
+                        <div class="form-field form-button">
+                                <button mat-raised-button color="primary" type="submit">LOGIN</button>
+                        </div>
+                        <br>
+                        <div class="form-field form-button">
+                        <button mat-raised-button color="primary" (click)="openSignUpForm()">SIGNUP</button>
+                        </div>
+                
+        </form>
+        </div>
+</div>

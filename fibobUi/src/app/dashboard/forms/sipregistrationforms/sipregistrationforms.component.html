@@ -2,10 +2,10 @@
 <h3>
   SIP Registration
 </h3>
-<div class="registration-container">
+<form class="sip-reg-container">
     <mat-form-field>
         <mat-label>Select Scheme </mat-label>
-        <input matInput [(ngModel)]=data.schemename>
+        <input matInput [(ngModel)]=data.schemename name="schemename">
     </mat-form-field>
     
       <mat-form-field>
@@ -25,5 +25,8 @@
             </mat-option>
           </mat-select>
       </mat-form-field>
-</div>
+      <div class="submitbutton">
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+      </div>
+</form>
 
