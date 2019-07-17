@@ -16,9 +16,7 @@ export class AllMutualFund {
    }
 
  GET_ALL_MUTUAL_FUND_URL = 'https://dmoin-mutual-fund-nav-bse-india-v1.p.mashape.com/GetAllFundHouses'
-
-
-   private extractData(res: Response) {
+    private extractData(res: Response) {
     let body = res;
     return body || { };
   }

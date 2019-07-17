@@ -28,6 +28,7 @@ import { LoginformComponent } from './dashboard/forms/loginform/loginform.compon
 import {SignupformComponent} from 'src/app/dashboard/forms/signupform/signupform.component';
 import {LoginGuard} from 'src/app/guard/auth/auth.guard';
 import { AuthService } from './services/auth.service';
+import { UserService } from './services/userdataservice';
 
 
 const appRoutes:Routes=[
@@ -74,7 +75,7 @@ const appRoutes:Routes=[
     ReactiveFormsModule,
     AngularFireDatabaseModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

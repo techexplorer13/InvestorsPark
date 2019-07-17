@@ -1,6 +1,7 @@
 import { Component, OnInit,Input, OnChanges } from '@angular/core';
 import {user} from 'src/app/entity/user';
 import { ActivatedRoute ,Router} from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-banner',

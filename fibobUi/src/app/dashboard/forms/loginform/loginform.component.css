@@ -29,3 +29,9 @@ h3{
     padding-left: 20%;
     width: 75.2%;
 }
+
+.loader{
+    position: absolute;
+    margin-top: -8%;
+    width: 100%;
+}

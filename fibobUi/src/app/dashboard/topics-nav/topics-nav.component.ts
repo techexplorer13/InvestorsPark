@@ -21,9 +21,20 @@ export class TopicsNavComponent implements OnInit {
 
   selectedNavBar:any[];
 
+  username:string
+
   constructor(private router:Router,private authservice:AuthService) { }
 
   ngOnInit() {
+    console.log("inside ngoninit() topicsnavcomp==>")
+    this.authservice.username.subscribe(name=>{
+      console.log(name)
+      if(name==null){
+        name=localStorage.getItem("username")
+      }
+      this.username=name;
+      console.log(this.username)
+    })
   }
 
   setOptions(topic){

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-signupform',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./signupform.component.css']
 })
 export class SignupformComponent implements OnInit {
-  hide = true;
+  hide:boolean;
   formAlertMessage: string;
   signUpFormVal: FormGroup;
   email = new FormControl('', [Validators.required, Validators.email]);
@@ -22,7 +22,7 @@ export class SignupformComponent implements OnInit {
   message: string;
   constructor(
     public dialogRef: MatDialogRef<SignupformComponent>, private router: Router,
-    private afAuth: AngularFireAuth, private angularFireStore: AngularFirestore) {
+    private afAuth: AngularFireAuth,private http:HttpClient) {
     this.email = new FormControl('', [Validators.required, Validators.email]);
 
     this.signUpFormVal = new FormGroup({
@@ -35,7 +35,7 @@ export class SignupformComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.hide=true;
   }
 
   createAccount(value) {
@@ -43,14 +43,17 @@ export class SignupformComponent implements OnInit {
     if (!this.formValidate(value)) {
       return;
     }
+    this.hide=false
     this.afAuth.auth.createUserWithEmailAndPassword(value.email, value.password).then(
       (user) => {
         value.id = user.user.uid;
         this.insertIntoUsersCollection(value)
+        this.hide=true;
       }).catch(
         () => {
           console.log("createUserWithEmailAndPassword() finished===>");
           this.afterCreationOfId("failed")
+          this.hide=true;
         }
       )
     console.log("Inside create account method() ended")
@@ -63,19 +66,14 @@ export class SignupformComponent implements OnInit {
 
   insertIntoUsersCollection(value) {
     console.log("insertIntoUsersCollection()==>")
-    console.log(value._id + "  " + value.email + " " + value.password + "  " + value.date + " ");
+    console.log(value.id + "  " + value.email + " " + value.password + "  " + value.date + " ");
 
-    this.angularFireStore.collection('users').add(value).then(
-      () => {
+    this.http.post('https://fibob-46c84.firebaseio.com/users.json',value).subscribe(
+      (response) => {
         console.log("inside add() success==>")
         this.afterCreationOfId("success")
       }
-    ).catch(
-      () => {
-        console.log("inside add() failed==>")
-        this.afterCreationOfId("failed")
-      }
-    )
+    );
   }
 
 
