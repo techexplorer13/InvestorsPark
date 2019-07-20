@@ -8,7 +8,7 @@
 <div class="fundspanel">
     <mat-table   [dataSource]="dynamicFilterAndAllMutualFund" class="mat-elevation-z8">
       <!-- Scheme Column -->
-  <ng-container matColumnDef="SchemeName">
+    <ng-container matColumnDef="SchemeName">
       <mat-header-cell *matHeaderCellDef> Fund Names </mat-header-cell>
       <mat-cell *matCellDef="let element" > {{element.SchemeName}} </mat-cell>
     </ng-container>

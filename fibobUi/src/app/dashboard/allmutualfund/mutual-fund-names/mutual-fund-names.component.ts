@@ -1,10 +1,8 @@
-import { Component, OnInit ,Input} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { SearchByFundHouse } from 'src/app/services/searchByFundHouse.service';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
-import { Observable } from 'rxjs/internal/Observable';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { mutualFundInfo } from 'src/app/entity/mutualfundInfo';
-import {MatDialog, MatDialogRef, MatDialogModule,MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import {SipregistrationformsComponent} from 'src/app/dashboard/forms/sipregistrationforms/sipregistrationforms.component';
 import { sipRegistrationDetailsData} from 'src/app/dashboard/forms/sipregistrationforms/sipRegistartionDetailsData';
 

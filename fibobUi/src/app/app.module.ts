@@ -8,6 +8,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth'
 import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -29,6 +30,8 @@ import {SignupformComponent} from 'src/app/dashboard/forms/signupform/signupform
 import {LoginGuard} from 'src/app/guard/auth/auth.guard';
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/userdataservice';
+import { DataService } from './services/dataservice';
+import { NewsComponent } from './dashboard/news/news.component';
 
 
 const appRoutes:Routes=[
@@ -51,7 +54,8 @@ const appRoutes:Routes=[
     FormsComponent,
     SipregistrationformsComponent,
     LoginformComponent,
-    SignupformComponent
+    SignupformComponent,
+    NewsComponent
   ],
   entryComponents: [
     SipregistrationformsComponent,
@@ -61,6 +65,7 @@ const appRoutes:Routes=[
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    MatExpansionModule,
     BrowserModule,
     HttpClientModule,
     MatDatepickerModule,
@@ -73,9 +78,9 @@ const appRoutes:Routes=[
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireDatabaseModule,
+    AngularFireDatabaseModule
   ],
-  providers: [AuthService,UserService],
+  providers: [AuthService,UserService,DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
