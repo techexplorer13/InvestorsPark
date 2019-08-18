@@ -1,6 +1,6 @@
 <div [ngClass]="'banner'">
       <div id="container" *ngIf="!isAuth">
-            <router-outlet></router-outlet>
+            <app-loginform></app-loginform>
       </div>
       <div *ngIf="isAuth">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">

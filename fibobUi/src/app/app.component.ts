@@ -39,7 +39,8 @@ export class AppComponent {
     console.log("Inside ngoninit appcomponent isAuth-==>" + this.isAuth)
   }
 
-  isUserAuthenticated() {
+  isUserAuthenticated(val:string) {
+    console.log("Inside user authenticated :"+val)
     return this.isAuth
   }
 }
