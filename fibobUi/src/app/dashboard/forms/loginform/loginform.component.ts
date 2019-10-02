@@ -2,7 +2,6 @@ import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/cor
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormGroup, FormControl } from '@angular/forms';
-import { LoginService } from 'src/app/services/login.service';
 import { MatDialog } from '@angular/material/dialog';
 import { SignupformComponent } from 'src/app/dashboard/forms/signupform/signupform.component';
 import { UserService } from 'src/app/services/userdataservice';
@@ -27,7 +26,7 @@ export class LoginformComponent implements OnInit {
 
 
   constructor(private route: ActivatedRoute, private authservice: AuthService,
-    private loginService: LoginService, private router: Router, public dialog: MatDialog
+     private router: Router, public dialog: MatDialog
     ,private userservice:UserService) {
       this.loginFormVal = new FormGroup({
       email: new FormControl(),
