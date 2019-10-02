@@ -1,11 +1,7 @@
 
-import { AngularFirestore, Query, QuerySnapshot, DocumentData} from '@angular/fire/firestore';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import {AngularFireAuth} from '@angular/fire/auth';
-import { Observable } from 'rxjs';
+import { AngularFirestore} from '@angular/fire/firestore';
+import { AngularFireDatabase} from 'angularfire2/database';
 import { Injectable } from '@angular/core';
-import {user} from 'src/app/entity/user';
-
 
 @Injectable({
     providedIn: 'root'
@@ -16,6 +12,4 @@ constructor(private db:AngularFireDatabase,private firestore: AngularFirestore)
 {
     
 }
-
-
 }
