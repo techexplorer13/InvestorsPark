@@ -1,7 +1,7 @@
 <nav class="topicsnavbar navbar-expand-sm">
   <ul class="topics_navbar-nav">
     <li *ngFor="let topic of topics" class="nav-item" (mouseout)="setOptions(topic)" (mouseover)="setOptions(topic)">
-      <a *ngIf="topic=='Home';else normalDropdown" class="labelcolor" href="latestnews">
+      <a *ngIf="topic=='Home';else normalDropdown" class="labelcolor" [routerLink]="['/latestnews']">
         {{topic}}
       </a>
       <ng-template #normalDropdown>
