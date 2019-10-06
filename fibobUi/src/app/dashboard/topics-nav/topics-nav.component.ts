@@ -11,7 +11,7 @@ export class TopicsNavComponent implements OnInit {
   /**
    * parent options of nav br
    */
-  topics:string[]=["My Account","SIP Investment","Mutual Fund","About us"]
+  topics:string[]=["Home","My Account","SIP Investment","Mutual Fund","About us"]
   /**
    * for mutual fund nav bar
    */
@@ -47,6 +47,8 @@ export class TopicsNavComponent implements OnInit {
     if(topic=="My Account"){
       this.selectedNavBar=this.myAccount;
     }
+    console.log(topic)
+    console.log(this.selectedNavBar)
   }
 
   doPreTask(routerlink:string){

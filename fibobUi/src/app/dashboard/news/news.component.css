@@ -1,3 +1,16 @@
 .newsdiv{
     margin-top: 40px;
+    background-color:#f5f5f5;
+}
+
+.newsContent{
+    text-align: left;
+    overflow-y: auto;
+    height: 430px;
+    width: 800px;
+    padding: 20px;
+}
+
+.articlecontent{
+    padding: 10px;
 }

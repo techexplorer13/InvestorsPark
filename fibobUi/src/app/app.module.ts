@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
@@ -37,7 +38,8 @@ import { NewsComponent } from './dashboard/news/news.component';
 const appRoutes:Routes=[
   {path:'allmutualfund',component:AllmutualfundComponent},
   {path:'mutualfundinfo',component:MutualFundNamesComponent},
-  {path:'login',component:LoginformComponent, canActivate: [LoginGuard]}
+  {path:'login',component:LoginformComponent, canActivate: [LoginGuard]},
+  {path:'latestnews',component:NewsComponent}
 ];
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
@@ -78,7 +80,8 @@ const appRoutes:Routes=[
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    NgbModule
   ],
   providers: [AuthService,UserService,DataService],
   bootstrap: [AppComponent]

@@ -1,7 +1,17 @@
 <div class="newsdiv">
-    <marquee>
+    <div class="newsContent">
         <ng-container *ngFor="let news of articleObservable|async">
-        {{news.description}}
+            <div class="articlecontent">
+                <div>
+                    <h3><a [href]="news.url">{{news.title}}</a></h3>
+                </div>
+                <div>
+                    {{news.description}}
+                </div>
+                <div>
+                    {{news.publishedat}}
+                </div>
+            </div>
         </ng-container>
-    </marquee>
+    </div>
 </div>

@@ -1,17 +1,18 @@
 <nav class="topicsnavbar navbar-expand-sm">
   <ul class="topics_navbar-nav">
-      <li *ngFor="let topic of topics" class="nav-item" (mouseout)="setOptions(topic)" (mouseover)="setOptions(topic)">
-          <a class="dropdown-toggle labelcolor" data-toggle="dropdown">
-            {{topic}}
-          </a>
-          <ul class="nav-item-menu" *ngIf="topic=='Mutual Fund' || topic=='SIP Investment' || topic=='My Account'">
-            <li *ngFor="let mutualFundtopic of selectedNavBar">
-                <a class="dropdown-item labelcolor" [routerLink]="mutualFundtopic[1]"  (click)="doPreTask(mutualFundtopic[0])">{{mutualFundtopic[0]}}</a>
-            </li>
-         </ul>
-      </li>
-      <li class="labelcolor" style="position: absolute;right: 2%;font-style: italic;">
-        Welcome back!! {{username}}
-      </li>
-    </ul>
+    <li *ngFor="let topic of topics" class="nav-item" (mouseout)="setOptions(topic)" (mouseover)="setOptions(topic)">
+      <a class="dropdown-toggle labelcolor" data-toggle="dropdown">
+        {{topic}}
+      </a>
+      <ul class="nav-item-menu" *ngIf="topic=='Mutual Fund' || topic=='SIP Investment' || topic=='My Account'">
+        <li *ngFor="let mutualFundtopic of selectedNavBar">
+          <a class="dropdown-item labelcolor" [routerLink]="mutualFundtopic[1]"
+            (click)="doPreTask(mutualFundtopic[0])">{{mutualFundtopic[0]}}</a>
+        </li>
+      </ul>
+    </li>
+    <li class="labelcolor" style="position: absolute;right: 2%;font-style: italic;">
+      Welcome back!! {{username}}
+    </li>
+  </ul>
 </nav>

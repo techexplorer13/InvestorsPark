@@ -1,4 +1,5 @@
 import { Component,Input, OnChanges } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute ,Router} from '@angular/router';
 
 @Component({
@@ -17,7 +18,7 @@ export class BannerComponent implements OnChanges {
   ngOnChanges() {
     console.log("Inside ngonChnages Bannercomponent")
     if(this.isAuth==true){
-        this.router.navigate(['/allmutualfund']);
+        this.router.navigate(['/latestnews']);
     }
     console.log("Inside ngonChnages Bannercomponent isAuTH=== "+this.isAuth)
   }
