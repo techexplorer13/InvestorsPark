@@ -1,9 +1,14 @@
 <nav class="topicsnavbar navbar-expand-sm">
   <ul class="topics_navbar-nav">
     <li *ngFor="let topic of topics" class="nav-item" (mouseout)="setOptions(topic)" (mouseover)="setOptions(topic)">
-      <a class="dropdown-toggle labelcolor" data-toggle="dropdown">
+      <a *ngIf="topic=='Home';else normalDropdown" class="labelcolor" href="latestnews">
         {{topic}}
       </a>
+      <ng-template #normalDropdown>
+        <a class="dropdown-toggle labelcolor" data-toggle="dropdown">
+          {{topic}}
+        </a>
+      </ng-template>
       <ul class="nav-item-menu" *ngIf="topic=='Mutual Fund' || topic=='SIP Investment' || topic=='My Account'">
         <li *ngFor="let mutualFundtopic of selectedNavBar">
           <a class="dropdown-item labelcolor" [routerLink]="mutualFundtopic[1]"
