@@ -1,17 +1,17 @@
 <div class="newsdiv">
     <div class="newsContent">
         <ng-container *ngFor="let news of articleObservable|async">
-            <div class="articlecontent">
-                <div>
-                    <h3><a [href]="news.url">{{news.title}}</a></h3>
-                </div>
-                <div>
+            <ul class="articlecontent list-group">
+                <li class="list-group-item">
+                    <h3><a [href]="news.url" target="_blank">{{news.title}}</a></h3>
+                </li>
+                <li class="list-group-item">
                     {{news.description}}
-                </div>
-                <div>
-                    {{news.publishedat}}
-                </div>
-            </div>
+                </li>
+                <li class="list-group-item">
+                    <span style="font-style:italic;">Author:-{{news.author}}</span>
+                </li>
+            </ul>
         </ng-container>
     </div>
 </div>
