@@ -16,7 +16,7 @@
 }
 
 .imagesize{
-    width: 106px;
+    width: 128px;
 }
 
 .imagediv{
@@ -26,10 +26,18 @@
 }
 
 
-.myContent{
+.innerimagediv{
+    padding: 22px;
+}
+
+.ParentContent{
     display: flex
 }
 
 .contentdiv{
+    padding: 5px;
+}
+
+.innercontentdiv{
     padding: 5px;
 }
