@@ -3,13 +3,16 @@
         <ng-container *ngFor="let news of articleObservable|async">
             <ul class="articlecontent list-group">
                 <li class="list-group-item">
-                    <h3><a [href]="news.url" target="_blank">{{news.title}}</a></h3>
-                </li>
-                <li class="list-group-item">
-                    {{news.description}}
-                </li>
-                <li class="list-group-item">
-                    <span style="font-style:italic;">Author:-{{news.author}}</span>
+                    <div class="myContent">
+                        <div class="imagediv">
+                            <img class="imagesize" [src]="news.urlToImage" alt="myimage">
+                        </div>
+                        <div class="contentdiv">
+                            <h3><a [href]="news.url" target="_blank">{{news.title}}</a></h3>
+                            {{news.description}}
+                            <span style="font-style:italic;">Author:-{{news.author}}</span>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </ng-container>

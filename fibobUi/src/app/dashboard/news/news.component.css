@@ -14,3 +14,22 @@
 .articlecontent{
     padding: 10px;
 }
+
+.imagesize{
+    width: 106px;
+}
+
+.imagediv{
+    width: 200px;
+    height: 100px;
+    padding-top: 22px;
+}
+
+
+.myContent{
+    display: flex
+}
+
+.contentdiv{
+    padding: 5px;
+}
