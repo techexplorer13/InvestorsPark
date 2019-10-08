@@ -6,14 +6,15 @@
                     <div class="ParentContent">
                         <div class="imagediv">
                             <div class="innerimagediv">
-                            <img class="imagesize" [src]="news.urlToImage" alt="myimage">
+                                <img class="imagesize" [src]="news.urlToImage" 
+                                onError="this.src='assets/img/brokenimage.png';">
                             </div>
                         </div>
                         <div class="contentdiv">
-                             <div class="innercontentdiv">
-                            <h3><a [href]="news.url" target="_blank">{{news.title}}</a></h3>
-                            {{news.description}}
-                            <span style="font-style:italic;">Author:-{{news.author}}</span>
+                            <div class="innercontentdiv">
+                                <h3><a [href]="news.url" target="_blank">{{news.title}}</a></h3>
+                                {{news.description}}
+                                <span style="font-style:italic;">Author:-{{news.author}}</span>
                             </div>
                         </div>
                     </div>
