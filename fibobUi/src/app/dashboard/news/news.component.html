@@ -2,19 +2,19 @@
     <div class="newsContent">
         <ng-container *ngFor="let news of articleObservable|async">
             <ul class="articlecontent list-group">
-                <li class="list-group-item">
+                <li style="background-color:#f5f5f5;" class="list-group-item">
                     <div class="ParentContent">
                         <div class="imagediv">
                             <div class="innerimagediv">
-                                <img class="imagesize" [src]="news.urlToImage" 
-                                onError="this.src='assets/img/brokenimage.png';">
+                                <img class="imagesize" [src]="news.urlToImage"
+                                    onError="this.src='assets/img/brokenimage.png';">
                             </div>
                         </div>
                         <div class="contentdiv">
                             <div class="innercontentdiv">
                                 <h3><a [href]="news.url" target="_blank">{{news.title}}</a></h3>
-                                {{news.description}}
-                                <span style="font-style:italic;">Author:-{{news.author}}</span>
+                                {{news.description}}<br>
+                                <span style="font-style:italic;padding-top: 3%">Author:-{{news.author}}</span>
                             </div>
                         </div>
                     </div>

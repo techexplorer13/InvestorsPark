@@ -20,11 +20,8 @@
 }
 
 .imagediv{
-    width: 200px;
-    height: 100px;
-    padding-top: 22px;
+   height: 50%;
 }
-
 
 .innerimagediv{
     padding: 22px;
@@ -40,4 +37,12 @@
 
 .innercontentdiv{
     padding: 5px;
+}
+
+.myNewsdiv{
+    height: 10%
+}
+
+.max-line{
+    text-overflow: ellipsis
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { DataService } from 'src/app/services/dataservice';
 import { MarketNews } from 'src/app/entity/marketnews/marketnews';
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import { Articles } from 'src/app/entity/marketnews/Articles';
 
 @Component({
@@ -11,19 +11,19 @@ import { Articles } from 'src/app/entity/marketnews/Articles';
   styleUrls: ['./news.component.css']
 })
 export class NewsComponent implements OnInit {
-  marketNews:MarketNews
-  articleObservable:Observable<Articles>
+  marketNews: MarketNews
+  articleObservable: Observable<Articles>
 
-  constructor(private http:HttpClient,private dataservice:DataService) { }
+  constructor(private http: HttpClient, private dataservice: DataService) { }
 
   ngOnInit() {
     console.log("Inside StockComponent ngOninit()==>")
 
-    this.articleObservable=Observable.create((observer)=>{
-    this.dataservice.getMarketNews().subscribe((response:MarketNews)=>{
-        this.marketNews=response;
+    this.articleObservable = Observable.create((observer) => {
+      this.dataservice.getMarketNews().subscribe((response: MarketNews) => {
+        this.marketNews = response;
         observer.next(this.marketNews.articles);
-     })
+      })
     })
   }
 }
