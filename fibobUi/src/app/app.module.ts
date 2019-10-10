@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -81,7 +82,8 @@ const appRoutes:Routes=[
     FormsModule,
     ReactiveFormsModule,
     AngularFireDatabaseModule,
-    NgbModule
+    NgbModule,
+    MatProgressSpinnerModule
   ],
   providers: [AuthService,UserService,DataService],
   bootstrap: [AppComponent]
