@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import {AuthService} from 'src/app/services/auth.service'
 
@@ -7,7 +7,7 @@ import {AuthService} from 'src/app/services/auth.service'
   templateUrl: './topics-nav.component.html',
   styleUrls: ['./topics-nav.component.css']
 })
-export class TopicsNavComponent implements OnInit {
+export class TopicsNavComponent implements OnInit,OnChanges {
   /**
    * parent options of nav br
    */
@@ -24,7 +24,12 @@ export class TopicsNavComponent implements OnInit {
   username:string
 
   constructor(private router:Router,private authservice:AuthService) { }
+  ngOnChanges(){
+    if(document.getElementById("mySidebar").style.width == "100px"){
+      document.getElementById("mySidebar").style.width = "0px";
+    }
 
+  }
   ngOnInit() {
     console.log("inside ngoninit() topicsnavcomp==>")
     this.authservice.username.subscribe(name=>{
@@ -53,6 +58,15 @@ export class TopicsNavComponent implements OnInit {
     if(routerlink=="Logout"){
         console.log("enter signout")
         this.authservice.signout();
+  }
+  }
+
+ openNav() {
+    if(document.getElementById("mySidebar").style.width == "100px"){
+      document.getElementById("mySidebar").style.width = "0px";
+    }
+    else{
+      document.getElementById("mySidebar").style.width = "100px";
     }
   }
 }

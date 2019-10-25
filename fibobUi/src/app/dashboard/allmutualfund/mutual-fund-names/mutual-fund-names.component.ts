@@ -18,7 +18,7 @@ export class MutualFundNamesComponent implements OnInit {
   private listMutualFundInfo:Array<mutualFundInfo>;
   show:boolean=false;
   private matchMutualFund:Array<mutualFundInfo>;
-  private dynamicFilterAndAllMutualFund:Array<mutualFundInfo>;
+  public dynamicFilterAndAllMutualFund:Array<mutualFundInfo>;
   displayedColumns: string[] = ['SchemeName', 'NetAssetValue'];
   private schemeName:string;
   

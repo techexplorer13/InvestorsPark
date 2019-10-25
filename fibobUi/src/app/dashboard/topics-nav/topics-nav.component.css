@@ -42,3 +42,61 @@
   z-index: 1000;
   display: none
 }
+
+.sidebar {
+  background-color: gainsboro;
+  width: 0;
+  height: 44%;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 5%;
+}
+
+.sidebar a {
+  text-decoration: none;
+  font-size: 13px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  padding-top: 8%;
+}
+
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 8px;
+  cursor: pointer;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  margin-left: 0px!important;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+@media only screen and (max-width: 1057px) {
+  #myNav{
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1057px) {
+  #mySidebar
+  {
+    display: none;
+  }
+  #main{
+    display: none;
+  }
+}

@@ -1,6 +1,12 @@
 <nav class="topicsnavbar navbar-expand-sm">
   <ul class="topics_navbar-nav">
-    <li *ngFor="let topic of topics" class="nav-item" (mouseout)="setOptions(topic)" (mouseover)="setOptions(topic)">
+    <li>
+      <a id="main">
+        <button class="openbtn" (click)="openNav()">☰</button>
+      </a>
+    </li>
+    <li id="myNav" *ngFor="let topic of topics" class="nav-item" (mouseout)="setOptions(topic)"
+      (mouseover)="setOptions(topic)">
       <a *ngIf="topic=='Home';else normalDropdown" class="labelcolor" [routerLink]="['/latestnews']">
         {{topic}}
       </a>
@@ -21,3 +27,21 @@
     </li>
   </ul>
 </nav>
+
+<div id="mySidebar" class="sidebar">
+  <a *ngFor="let topic of topics" class="nav-item" (mouseout)="setOptions(topic)" (mouseover)="setOptions(topic)">
+    <a *ngIf="topic=='Home';else normalDropdown" class="labelcolor" [routerLink]="['/latestnews']">{{topic}}</a>
+    <ng-template #normalDropdown>
+      <a class="dropdown-btn labelcolor" data-toggle="dropdown">
+        {{topic}}
+      </a>
+    </ng-template>
+    <div class="dropdown-container">
+      <a *ngIf="topic=='My Account'">
+        <a *ngFor="let mutualFundtopic of selectedNavBar">
+            <a [routerLink]="mutualFundtopic[1]" (click)="doPreTask(mutualFundtopic[0])">{{mutualFundtopic[0]}}</a>
+        </a>
+      </a>
+    </div>
+  </a>
+</div>
