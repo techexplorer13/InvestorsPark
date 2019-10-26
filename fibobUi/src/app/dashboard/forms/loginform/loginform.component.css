@@ -3,13 +3,8 @@
    width: 100%;
 }
 
-.loginblock{
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
 .loginform{
-    padding-left: 20%;
+    padding-left: 35%;
     width: 75.2%;
 }
 
@@ -35,11 +30,21 @@ h3{
 
 
 .loader{
-    position: absolute;
     margin-top: -8%;
     width: 100%;
 }
 
+@media only screen and (min-width: 450px) {
 .parentloginblock{
-    padding-bottom: 100px;
+    padding-left: 32%;
+    padding-top: 10%;
 }
+}
+
+@media only screen and (max-width: 450px) {
+    .parentloginblock{
+        padding-left: 15%;
+        padding-right: 27%;
+        padding-top: 10%;
+    }
+  }

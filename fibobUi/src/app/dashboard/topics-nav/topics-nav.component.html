@@ -37,7 +37,7 @@
       </a>
     </ng-template>
     <div class="dropdown-container">
-      <a *ngIf="topic=='My Account'">
+      <a *ngIf="topic=='Mutual Fund' || topic=='SIP Investment' || topic=='My Account'">
         <a *ngFor="let mutualFundtopic of selectedNavBar">
             <a [routerLink]="mutualFundtopic[1]" (click)="doPreTask(mutualFundtopic[0])">{{mutualFundtopic[0]}}</a>
         </a>

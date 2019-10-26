@@ -52,6 +52,7 @@ export class TopicsNavComponent implements OnInit,OnChanges {
     if(topic=="My Account"){
       this.selectedNavBar=this.myAccount;
     }
+    console.log(this.selectedNavBar)
   }
 
   doPreTask(routerlink:string){
