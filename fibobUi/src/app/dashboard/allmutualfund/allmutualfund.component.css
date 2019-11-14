@@ -1,14 +1,15 @@
 .panel{
     overflow:auto;
     height: 350px;
-    background-color: white
+    background-color: white;
+    margin-top: 3%;
 }
 .myValue li:hover { 
     background-color:rgb(192, 192, 192);
 }
 
 .headingStyle{
-    height: 50px;
+    height: 40px;
     position: relative;
     font-family: Roboto,"Helvetica Neue",sans-serif;
 }
@@ -19,4 +20,16 @@
     height: 82%;
     width: 65%;
     margin-left: 19%;
+}
+
+@media only screen and (max-width: 400px) {
+.componentTitle{
+    font-size: 17px;
+}
+}
+
+@media only screen and (min-width: 401px) {
+    .componentTitle{
+        font-size: 27px;
+    }
 }

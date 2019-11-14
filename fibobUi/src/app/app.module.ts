@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BannerComponent } from './banner/banner.component';
 import { TopicsNavComponent } from './dashboard/topics-nav/topics-nav.component';
-import { DropdownDirective } from './dropdown.directive';
+import { ClickOutsideDirective } from './directives/clickoutside.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { AllmutualfundComponent } from './dashboard/allmutualfund/allmutualfund.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -49,7 +49,6 @@ const appRoutes:Routes=[
     HeaderComponent,
     BannerComponent,
     TopicsNavComponent,
-    DropdownDirective,
     AllmutualfundComponent,
     DashboardComponent,
     FooterComponent,
@@ -58,7 +57,8 @@ const appRoutes:Routes=[
     SipregistrationformsComponent,
     LoginformComponent,
     SignupformComponent,
-    NewsComponent
+    NewsComponent,
+    ClickOutsideDirective
   ],
   entryComponents: [
     SipregistrationformsComponent,

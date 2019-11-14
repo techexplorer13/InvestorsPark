@@ -22,22 +22,30 @@ h3{
     height: 50px;
 }
 
-.form-field{
-    padding-top: 7px;
-    height: 45px;
-    text-align: left;
-}
-
 
 .loader{
     margin-top: -8%;
     width: 100%;
 }
 
+.image-input{
+    display: flex;
+    height: 50px;
+}
+
+.image{
+    height: 76%;
+    padding: 3%;
+    background-color: #5680e9;
+    width: 17%;
+    padding-bottom: 11px;
+}
+
 @media only screen and (min-width: 450px) {
 .parentloginblock{
     padding-left: 32%;
     padding-top: 10%;
+    
 }
 }
 
@@ -46,5 +54,18 @@ h3{
         padding-left: 15%;
         padding-right: 27%;
         padding-top: 10%;
+        
     }
   }
+
+.input-group{
+    height: 45px;
+}
+
+.loginlabel{
+    color:#5680e9;
+    margin-bottom: 10%;
+}
+
+
+

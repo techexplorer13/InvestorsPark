@@ -29,12 +29,13 @@ ul{
 
 .mat-header-cell {
     font-size: 20px;
+    padding-left: 8px;
+    text-align: left;
 }
 
-.mat-cell,
-.mat-header-cell
-{
-flex: 0 0 70%;
+.mat-cell{
+    text-align: left !important;
+    padding-left: 9px;
 }
 
 .mutual-fund-panel{

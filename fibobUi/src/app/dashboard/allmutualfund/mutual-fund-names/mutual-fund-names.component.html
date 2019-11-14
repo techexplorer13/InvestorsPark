@@ -8,16 +8,17 @@
 <div class="fundspanel">
     <mat-table   [dataSource]="dynamicFilterAndAllMutualFund" class="mat-elevation-z8">
       <!-- Scheme Column -->
-    <ng-container matColumnDef="SchemeName">
+    <div matColumnDef="SchemeName">
       <mat-header-cell *matHeaderCellDef> Fund Names </mat-header-cell>
       <mat-cell *matCellDef="let element" > {{element.SchemeName}} </mat-cell>
-    </ng-container>
+    </div>
   
     <!-- NAV Column -->
-    <ng-container matColumnDef="NetAssetValue">
+    <div matColumnDef="NetAssetValue">
       <mat-header-cell  *matHeaderCellDef> Net Asset Value </mat-header-cell>
       <mat-cell  *matCellDef="let element"> {{element.NetAssetValue}} </mat-cell>
-    </ng-container>
+    </div>
+
     <mat-header-row *matHeaderRowDef="displayedColumns;sticky: true"></mat-header-row>
     <mat-row title="click to register for SIP" *matRowDef="let row; columns: displayedColumns;let i= index" (click)="openRegisterForm(i)"></mat-row>
     </mat-table>

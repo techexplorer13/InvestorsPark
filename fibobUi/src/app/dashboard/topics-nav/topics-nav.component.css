@@ -1,10 +1,11 @@
 
-.nav-item:hover > .nav-item-menu {
+.nav-item:hover > .dropdown-nav-item-menu {
   display: block;
 }
+
 .topics_navbar-nav {
-  width: 100%!important;
-  display: flex;
+    width: 100%!important;
+    display: flex;
     flex-direction: row;
     padding-left: 0;
     margin-bottom: 0;
@@ -12,9 +13,11 @@
     height: 100%;
     padding-top: 0.35%;
 }
-.nav-item{
-  padding-left: 2%;
+
+.nav-item {
+ width:100%;
 }
+
 .topicsnavbar
 {   
   position: relative;
@@ -24,24 +27,7 @@
     justify-content: space-between;
     height: 37px;
 }
-.nav-item-menu{
-  position: absolute;
-  top: 92%;
-  float: left;
-  min-width: 9.5rem;
-  padding: .5rem 10;
-  margin: .125rem 0 0;
-  font-size: 1rem;
-  color: #212529;
-  text-align: left;
-  list-style: none;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.15);
-  padding-left: 0;
-  z-index: 1000;
-  display: none
-}
+
 
 .sidebar {
   background-color: gainsboro;
@@ -86,7 +72,7 @@
 }
 
 @media only screen and (max-width: 1057px) {
-  #myNav{
+  #nav-bar-horizontal{
     display: none;
   }
 }
@@ -99,4 +85,64 @@
   #main{
     display: none;
   }
+}
+
+
+.dropdown-nav-item-menu{
+  position: absolute;
+  top: 100%;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: .5rem 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+}
+
+.nav-item-sidebr{
+  width: 100px;
+  margin-top: 10%;
+}
+
+.dropdown-nav-item-sidebr{
+  top: 100%;
+  z-index: 1000;
+  display: none;
+  min-width: 10rem;
+  padding: .5rem 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-clip: padding-box;
+}
+
+.dropdown-nav-item-sidebr.show {
+  display: block;
+}
+
+
+#nav-bar-horizontal{
+  width: 100%;
+}
+
+
+.nav-bar-horizontal-child {
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  height: 100%;
+  width: 38%;
+}
+
+.nav-sidebr{
+  height: 24px;
+  list-style: none;
+  padding: 0;
 }

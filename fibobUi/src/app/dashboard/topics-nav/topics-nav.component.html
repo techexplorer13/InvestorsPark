@@ -1,47 +1,56 @@
 <nav class="topicsnavbar navbar-expand-sm">
-  <ul class="topics_navbar-nav">
-    <li>
-      <a id="main">
-        <button class="openbtn" (click)="openNav()">☰</button>
-      </a>
-    </li>
-    <li id="myNav" *ngFor="let topic of topics" class="nav-item" (mouseout)="setOptions(topic)"
-      (mouseover)="setOptions(topic)">
-      <a *ngIf="topic=='Home';else normalDropdown" class="labelcolor" [routerLink]="['/latestnews']">
-        {{topic}}
-      </a>
-      <ng-template #normalDropdown>
-        <a class="dropdown-toggle labelcolor" data-toggle="dropdown">
-          {{topic}}
-        </a>
-      </ng-template>
-      <ul class="nav-item-menu" *ngIf="topic=='Mutual Fund' || topic=='SIP Investment' || topic=='My Account'">
-        <li *ngFor="let mutualFundtopic of selectedNavBar">
-          <a class="dropdown-item labelcolor" [routerLink]="mutualFundtopic[1]"
-            (click)="doPreTask(mutualFundtopic[0])">{{mutualFundtopic[0]}}</a>
+  <div class="topics_navbar-nav">
+    <a id="main">
+      <button id="menu" class="openbtn" (click)="openNav()">Menu</button>
+    </a>
+    <div id="nav-bar-horizontal">
+      <ul class="nav-bar-horizontal-child">
+        <li class="nav-item">
+          <a class="labelcolor" [routerLink]="routerLink[2]">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="labelcolor" data-toggle="dropdown">My Account</a>
+          <div class="dropdown-nav-item-menu">
+            <a class="dropdown-item labelcolor" [routerLink]="routerLink[0]"
+              (click)=doPreTask(routesNames[0])>LogOut</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="labelcolor" data-toggle="dropdown">SIP Investment</a>
+          <div class="dropdown-nav-item-menu">
+            <a class="dropdown-item labelcolor" [routerLink]="routerLink[1]">All Mutual Fund</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="labelcolor" href="#">About us</a>
         </li>
       </ul>
-    </li>
-    <li class="labelcolor" style="position: absolute;right: 2%;font-style: italic;padding-left: 22%">
-      Welcome back!! {{username}}
-    </li>
-  </ul>
+    </div>
+  </div>
 </nav>
 
-<div id="mySidebar" class="sidebar">
-  <a *ngFor="let topic of topics" class="nav-item" (mouseout)="setOptions(topic)" (mouseover)="setOptions(topic)">
-    <a *ngIf="topic=='Home';else normalDropdown" class="labelcolor" [routerLink]="['/latestnews']">{{topic}}</a>
-    <ng-template #normalDropdown>
-      <a class="dropdown-btn labelcolor" data-toggle="dropdown">
-        {{topic}}
-      </a>
-    </ng-template>
-    <div class="dropdown-container">
-      <a *ngIf="topic=='Mutual Fund' || topic=='SIP Investment' || topic=='My Account'">
-        <a *ngFor="let mutualFundtopic of selectedNavBar">
-            <a [routerLink]="mutualFundtopic[1]" (click)="doPreTask(mutualFundtopic[0])">{{mutualFundtopic[0]}}</a>
-        </a>
-      </a>
-    </div>
-  </a>
+<!-- below code is for medium and small size screens-->
+<div  id="mySidebar" class="sidebar" clickOutside>
+  <div class="topics_navbar-nav">
+    <ul class="nav-sidebr">
+      <li class="nav-item-sidebr">
+        <a class="labelcolor" [routerLink]="routerLink[2]">Home</a>
+      </li>
+      <li class="nav-item-sidebr">
+        <a href="#accountmenu" class="labelcolor" data-toggle="collapse">My Account</a>
+        <div id='accountmenu' class="collapse">
+          <a class="labelcolor" [routerLink]="routerLink[0]" (click)=doPreTask(routesNames[0])>LogOut</a>
+        </div>
+      </li>
+      <li class="nav-item-sidebr">
+        <a href="#investmentmenu" class="labelcolor" data-toggle="collapse">SIP Investment</a>
+        <div id='investmentmenu' class="collapse">
+          <a class="labelcolor" [routerLink]="routerLink[1]">All Mutual Fund</a>
+        </div>
+      </li>
+      <li class="nav-item-sidebr">
+        <a class="labelcolor" href="#">About us</a>
+      </li>
+    </ul>
+  </div>
 </div>
