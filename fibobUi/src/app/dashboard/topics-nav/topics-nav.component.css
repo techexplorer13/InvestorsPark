@@ -1,17 +1,12 @@
-
 .nav-item:hover > .dropdown-nav-item-menu {
   display: block;
 }
 
 .topics_navbar-nav {
     width: 100%!important;
-    display: flex;
     flex-direction: row;
-    padding-left: 0;
-    margin-bottom: 0;
     list-style: none;
     height: 100%;
-    padding-top: 0.35%;
 }
 
 .nav-item {
@@ -62,7 +57,7 @@
   font-size: 8px;
   cursor: pointer;
   color: white;
-  padding: 10px 15px;
+  padding: 8px 15px;
   border: none;
   margin-left: 0px!important;
 }
@@ -72,7 +67,7 @@
 }
 
 @media only screen and (max-width: 1057px) {
-  #nav-bar-horizontal{
+  #main2{
     display: none;
   }
 }
@@ -91,18 +86,15 @@
 .dropdown-nav-item-menu{
   position: absolute;
   top: 100%;
-  z-index: 1000;
   display: none;
-  float: left;
-  min-width: 10rem;
-  padding: .5rem 0;
-  font-size: 1rem;
-  color: #212529;
+  min-width: 9.1rem;
   text-align: left;
-  list-style: none;
-  background-color: #fff;
-  background-clip: padding-box;
 }
+
+.a:hover{
+  background-color: #343a40!important;
+}
+
 
 .nav-item-sidebr{
   width: 100px;
@@ -127,22 +119,28 @@
 }
 
 
-#nav-bar-horizontal{
-  width: 100%;
+.dropdown-item {
+  padding-left: 15% !important;
+  padding-top: 2% !important;
 }
 
 
 .nav-bar-horizontal-child {
   display: flex;
-  padding-left: 0;
-  margin-bottom: 0;
   list-style: none;
-  height: 100%;
-  width: 38%;
+  margin-bottom: 0rem;
+  padding-inline-start: 0px;
 }
 
 .nav-sidebr{
   height: 24px;
   list-style: none;
   padding: 0;
+}
+
+.optiondiv{
+  display: inline-block;
+  padding: 4px;
+  padding-right: 25px;
+  border: 1px solid green;
 }

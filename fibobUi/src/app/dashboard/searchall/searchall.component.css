@@ -1,0 +1,40 @@
+.searchResults{
+    text-align: left;
+    padding: 3px;
+    border: 1px solid aliceblue;
+}
+
+.searchcontainer{
+    overflow-y: scroll;
+    width: 46%;
+    height: auto;
+    max-height: 20%;
+    background-color: white;
+    position: absolute;
+    z-index: 1;
+}
+
+.w-75 {
+    width: 93%!important;
+}
+
+.active-cyan .fas, .active-cyan-2 .fas, .active-cyan-3 .fas, .active-cyan-4 .fas {
+    color: #4dd0e1;
+}
+
+.graph{
+    position: absolute;
+    top: 162px;
+}
+
+.spinner-border {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: text-bottom;
+    border: .25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spinner-border .75s linear infinite;
+    animation: spinner-border .75s linear infinite;
+}

@@ -1,8 +1,13 @@
+<div class="homepage">
 <div class="newsdiv">
-    <div class="newsContent" *ngIf="articleObservable|async as articles;else loading">
-        <ng-container *ngFor="let news of articles">
+    <div class="breaking-news">
+        <span class="break-label UC">Top News</span>
+        <span class="icn_bg"></span>
+    </div>
+    <div class="newsContent" *ngIf="marketNews!=null && marketNews.length!=0;else loading">
+        <ng-container *ngFor="let news of marketNews.articles">
             <ul class="articlecontent list-group">
-                <li style="background-color:#f5f5f5;" class="list-group-item">
+                <li class="list-group-item-imp">
                     <div class="ParentContent">
                         <div class="imagediv">
                             <div class="innerimagediv">
@@ -12,7 +17,7 @@
                         </div>
                         <div class="contentdiv">
                             <div class="innercontentdiv">
-                                <h3><a [href]="news.url" target="_blank">{{news.title}}</a></h3>
+                                <h5><a [href]="news.url" target="_blank">{{news.title}}</a></h5>
                                 {{news.description}}<br>
                                 <span style="font-style:italic;padding-top: 3%">Author:-{{news.author}}</span>
                             </div>
@@ -30,4 +35,8 @@
                 Loading your favourite news!!
         </div>
     </ng-template>
+</div>
+<div class="searchdiv">
+<app-searchall></app-searchall>
+</div>
 </div>

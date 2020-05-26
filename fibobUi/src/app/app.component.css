@@ -1,5 +1,5 @@
 :host ::ng-deep .labelcolor{
-   color :#5680e9 !important
+   color :#5680e9 !important;
 }
 
 
@@ -9,3 +9,6 @@
    width: 100%;
 }
  
+.header{
+   background: url("//assets/img/SENSEX_NSE_nifty_BSE_Stock-market__-770x433.jpg")
+}

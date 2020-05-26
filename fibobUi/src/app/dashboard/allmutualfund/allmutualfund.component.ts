@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AllMutualFund } from 'src/app/services/allMutualFund.service';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router} from '@angular/router';
 @Component({
   selector: 'app-allmutualfund',
   templateUrl: './allmutualfund.component.html',

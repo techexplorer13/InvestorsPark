@@ -17,7 +17,11 @@ export class ClickOutsideDirective {
                 this.el.nativeElement.style.width = "0px";
             }
         }
-    
+        
+        if(document.getElementById('searchArray')!=undefined){
+            document.getElementById('searchArray').style.display='none';
+        }
+        
     }
 
 }

@@ -1,9 +1,0 @@
-<div [ngClass]="'banner'">
-      <div id="container" *ngIf="isAuth">
-            <router-outlet></router-outlet>
-      </div>
-
-      <div id="container" *ngIf="!isAuth">
-            <app-loginform></app-loginform>
-      </div>
-</div>

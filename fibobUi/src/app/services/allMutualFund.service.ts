@@ -8,14 +8,15 @@ import { map, catchError, tap } from 'rxjs/operators';
 })
 export class AllMutualFund {
 
-  private headers = new HttpHeaders().append('Content-Type', 'application/json').append('X-Mashape-Key'
-,'qXh9J5jsfimsh7ng0zGozuz4jt5Hp1r2m9ajsn8MNbPYtoYdDV');
+  private headers = new HttpHeaders().append('Content-Type', 'application/json').
+  append('x-rapidapi-host', 'latest-mutual-fund-nav.p.rapidapi.com')
+  .append('x-rapidapi-key', 'SD9BkTcTYymsh4MyQs90mUTd9jFwp1MElTejsn6gBjrBlzN3KC');
 
   constructor(private http: HttpClient) {
     
    }
 
- GET_ALL_MUTUAL_FUND_URL = 'https://dmoin-mutual-fund-nav-bse-india-v1.p.mashape.com/GetAllFundHouses'
+ GET_ALL_MUTUAL_FUND_URL = 'https://latest-mutual-fund-nav.p.rapidapi.com/fetchAllMutualFundFamilies'
     private extractData(res: Response) {
     let body = res;
     return body || { };

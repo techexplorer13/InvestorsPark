@@ -1,0 +1,18 @@
+<div style="height: 100%">
+  <div class="form-inline d-flex md-form form-sm active-cyan-2">
+    <input id="searchBar" class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search Mutualfunds,Stocks" aria-label="Search"
+       #searchbar>
+    <i id="searchicon" class="fas fa-search"  (click)="searchAll(searchbar.value)"></i>
+    <span id="loadicon" class="spinner-border text-primary" style="display:none" role="status"></span>
+  </div>
+  <div id="searchArray" clickOutside *ngIf="searchBeanArray!=null && searchBeanArray.length>0" class="searchcontainer">
+    <div class="searchResults" *ngFor="let val of searchBeanArray">
+      <span [ngStyle]="{'color':checkColor(val.type)}"><a (click)="getGraphFromSymbol(val)">{{val.name}}</a></span>
+    </div>
+  </div>
+  <div id="graphid" class="graph">
+  <ng-template [ngIf]="this.selectedstockInfo!=null">
+    <app-graph-component [stockInfo]="this.selectedstockInfo"></app-graph-component>
+  </ng-template>
+  </div>
+</div>

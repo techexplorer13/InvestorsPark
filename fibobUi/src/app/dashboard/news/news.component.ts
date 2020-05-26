@@ -12,19 +12,17 @@ import { Articles } from 'src/app/entity/marketnews/Articles';
   styleUrls: ['./news.component.css']
 })
 export class NewsComponent implements OnInit {
-  marketNews: MarketNews
-  articleObservable: Observable<Articles>
+  marketNews: any
 
-  constructor(private http: HttpClient, private dataservice: DataService) { }
+  constructor(private dataservice: DataService) { 
+    this.dataservice.getMarketNews().then((response: any) => {
+      this.marketNews = response.json();
+      console.log(this.marketNews)
+    })
+  }
 
   ngOnInit() {
     console.log("Inside StockComponent ngOninit()==>")
-
-    this.articleObservable = Observable.create((observer) => {
-      this.dataservice.getMarketNews().subscribe((response: MarketNews) => {
-        this.marketNews = response;
-        observer.next(this.marketNews.articles);
-      })
-    })
+  
   }
 }

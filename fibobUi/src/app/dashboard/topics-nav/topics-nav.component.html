@@ -1,36 +1,24 @@
-<nav class="topicsnavbar navbar-expand-sm">
-  <div class="topics_navbar-nav">
+
+  <div class="topics_navbar-nav bg-dark">
+    <div>
     <a id="main">
-      <button id="menu" class="openbtn" (click)="openNav()">Menu</button>
+      <button id="menu" class="openbtn bg-dark" (click)="openNav()"><span class="dark-blue-text"><i
+        class="fas fa-bars fa-2x"></i></span></button>
     </a>
-    <div id="nav-bar-horizontal">
-      <ul class="nav-bar-horizontal-child">
-        <li class="nav-item">
-          <a class="labelcolor" [routerLink]="routerLink[2]">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="labelcolor" data-toggle="dropdown">My Account</a>
-          <div class="dropdown-nav-item-menu">
-            <a class="dropdown-item labelcolor" [routerLink]="routerLink[0]"
-              (click)=doPreTask(routesNames[0])>LogOut</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="labelcolor" data-toggle="dropdown">SIP Investment</a>
-          <div class="dropdown-nav-item-menu">
-            <a class="dropdown-item labelcolor" [routerLink]="routerLink[1]">All Mutual Fund</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="labelcolor" href="#">About us</a>
+    </div>
+    <div id="main2" style="text-align: center">
+      <div style="display: inline-block">
+      <ul class="nav-bar-horizontal-child clearfix">
+        <li *ngFor="let label of labels;let i=index">
+          <div class="optiondiv"><a [routerLink]="routerLink[i]" (click)=doPreTask(routesNames[i])>{{label}}</a></div>
         </li>
       </ul>
     </div>
+    </div>
   </div>
-</nav>
 
 <!-- below code is for medium and small size screens-->
-<div  id="mySidebar" class="sidebar" clickOutside>
+<div  id="mySidebar" class="sidebar bg-dark" clickOutside>
   <div class="topics_navbar-nav">
     <ul class="nav-sidebr">
       <li class="nav-item-sidebr">
@@ -43,7 +31,7 @@
         </div>
       </li>
       <li class="nav-item-sidebr">
-        <a href="#investmentmenu" class="labelcolor" data-toggle="collapse">SIP Investment</a>
+        <a href="#investmentmenu" class="labelcolor" data-toggle="collapse">Investment</a>
         <div id='investmentmenu' class="collapse">
           <a class="labelcolor" [routerLink]="routerLink[1]">All Mutual Fund</a>
         </div>

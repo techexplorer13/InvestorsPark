@@ -11,8 +11,9 @@ export class TopicsNavComponent implements OnInit {
   /**
    * parent options of nav br
    */
-  routerLink:string[]=["/login","/allmutualfund","/latestnews"]
-  routesNames:string[]=["Logout"]
+  routerLink:string[]=["/latestnews","/allmutualfund","/login",]
+  routesNames:string[]=["null","null","Logout"]
+  labels = ['Home','Investment','Logout'];
   username:string
   isFirstCall:boolean;
 

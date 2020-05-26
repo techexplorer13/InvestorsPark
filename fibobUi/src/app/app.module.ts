@@ -14,7 +14,6 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { BannerComponent } from './banner/banner.component';
 import { TopicsNavComponent } from './dashboard/topics-nav/topics-nav.component';
 import { ClickOutsideDirective } from './directives/clickoutside.directive';
 import { HttpClientModule } from '@angular/common/http';
@@ -33,7 +32,12 @@ import {LoginGuard} from 'src/app/guard/auth/auth.guard';
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/userdataservice';
 import { DataService } from './services/dataservice';
+import { FetchAllSchemeNames} from './services/fetchAllSchemeNames';
 import { NewsComponent } from './dashboard/news/news.component';
+import { SearchallComponent } from './dashboard/searchall/searchall.component';
+import { GraphComponent } from './dashboard/searchall/graph-component/GraphChart.component';
+import { TimeseriesdailyService} from './services/timeseriesdaily.service';
+import { HttpModule } from '@angular/http';
 
 
 const appRoutes:Routes=[
@@ -47,7 +51,6 @@ const appRoutes:Routes=[
   declarations: [
     AppComponent,
     HeaderComponent,
-    BannerComponent,
     TopicsNavComponent,
     AllmutualfundComponent,
     DashboardComponent,
@@ -58,13 +61,16 @@ const appRoutes:Routes=[
     LoginformComponent,
     SignupformComponent,
     NewsComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    SearchallComponent,
+    GraphComponent
   ],
   entryComponents: [
     SipregistrationformsComponent,
     SignupformComponent
   ],
   imports: [
+    HttpModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
@@ -85,7 +91,7 @@ const appRoutes:Routes=[
     NgbModule,
     MatProgressSpinnerModule
   ],
-  providers: [AuthService,UserService,DataService],
+  providers: [AuthService,UserService,DataService,FetchAllSchemeNames,TimeseriesdailyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
