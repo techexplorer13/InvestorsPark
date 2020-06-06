@@ -5,19 +5,19 @@
         <span class="icn_bg"></span>
     </div>
     <div class="newsContent" *ngIf="marketNews!=null && marketNews.length!=0;else loading">
-        <ng-container *ngFor="let news of marketNews.articles">
+        <ng-container *ngFor="let news of marketNews.value">
             <ul class="articlecontent list-group">
                 <li class="list-group-item-imp">
                     <div class="ParentContent">
                         <div class="imagediv">
                             <div class="innerimagediv">
-                                <img class="imagesize" [src]="news.urlToImage"
+                                <img class="imagesize" [src]="news.image.thumbnail.contentUrl"
                                     onError="this.src='assets/img/brokenimage.png';">
                             </div>
                         </div>
                         <div class="contentdiv">
                             <div class="innercontentdiv">
-                                <h5><a [href]="news.url" target="_blank">{{news.title}}</a></h5>
+                                <h5><a [href]="news.url" target="_blank">{{news.name}}</a></h5>
                                 {{news.description}}<br>
                                 <span style="font-style:italic;padding-top: 3%">Author:-{{news.author}}</span>
                             </div>

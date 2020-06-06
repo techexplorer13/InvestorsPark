@@ -29,6 +29,7 @@ export class GraphComponent implements OnChanges {
 
   ngOnChanges() {
     console.log(this.stockInfo.symbol)
+    this.loader(true)
     this.timeserieschartdata=new Array<Object>();
     if(this.dailytimeSeriesSub!=undefined){
       this.dailytimeSeriesSub.unsubscribe();
@@ -51,9 +52,6 @@ export class GraphComponent implements OnChanges {
       var chart = new CanvasJS.Chart("chartContainer", {
         animationEnabled: true,
         zoomEnabled: true,
-        title: {
-          text: this.stockInfo.name
-        },
         width: 740,
         axisX:{
           valueFormatString:  "DD MMMM YYYY"
@@ -66,6 +64,7 @@ export class GraphComponent implements OnChanges {
           dataPoints: this.timeserieschartdata
         }]  // random generator below
       });
+      this.loader(false)
       chart.render();
     })
   }
@@ -79,4 +78,14 @@ export class GraphComponent implements OnChanges {
     return timeSeriesDailyMap;
   }
   
+  loader(start:boolean ){
+    if(start){
+    document.getElementById('GraphInfo').style.display='none'
+    document.getElementById('loader').style.display=''
+    }
+    else{
+      document.getElementById('GraphInfo').style.display=''
+      document.getElementById('loader').style.display='none'
+    }
+  }
 }

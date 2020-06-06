@@ -10,9 +10,7 @@
       <span [ngStyle]="{'color':checkColor(val.type)}"><a (click)="getGraphFromSymbol(val)">{{val.name}}</a></span>
     </div>
   </div>
-  <div id="graphid" class="graph">
   <ng-template [ngIf]="this.selectedstockInfo!=null">
     <app-graph-component [stockInfo]="this.selectedstockInfo"></app-graph-component>
   </ng-template>
-  </div>
 </div>

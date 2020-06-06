@@ -12,12 +12,13 @@ import { Articles } from 'src/app/entity/marketnews/Articles';
   styleUrls: ['./news.component.css']
 })
 export class NewsComponent implements OnInit {
-  marketNews: any
+  marketNews: any;
 
   constructor(private dataservice: DataService) { 
-    this.dataservice.getMarketNews().then((response: any) => {
-      this.marketNews = response.json();
-      console.log(this.marketNews)
+    this.dataservice.getMarketNews().subscribe((response: any) => {
+      
+      this.marketNews = response;
+      console.log(this.marketNews.value)
     })
   }
 

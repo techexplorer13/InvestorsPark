@@ -1,0 +1,11 @@
+.label{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 31px;
+}
+
+.graph{
+    position: absolute;
+    top: 162px;
+    width:734px;
+    height:368px
+}
