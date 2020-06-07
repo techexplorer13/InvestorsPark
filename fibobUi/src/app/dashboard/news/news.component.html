@@ -4,6 +4,9 @@
         <span class="break-label UC">Top News</span>
         <span class="icn_bg"></span>
     </div>
+    <ul class="nav nav-tabs">
+        <li class="nav-item" *ngFor="let tab of tabs;let i=index"><a [ngClass]="{'nav-link':true,'active':isActive(i)}" (click)="setIndex(i)">{{tab}}</a></li>
+    </ul>
     <div class="newsContent" *ngIf="marketNews!=null && marketNews.length!=0;else loading">
         <ng-container *ngFor="let news of marketNews.value">
             <ul class="articlecontent list-group">
@@ -11,7 +14,7 @@
                     <div class="ParentContent">
                         <div class="imagediv">
                             <div class="innerimagediv">
-                                <img class="imagesize" [src]="news.image.thumbnail.contentUrl"
+                                <img class="imagesize" [src]="news.image!=null && news.image.thumbnail!=null?news.image.thumbnail.contentUrl:'assets/img/brokenimage.png'"
                                     onError="this.src='assets/img/brokenimage.png';">
                             </div>
                         </div>
@@ -19,7 +22,7 @@
                             <div class="innercontentdiv">
                                 <h5><a [href]="news.url" target="_blank">{{news.name}}</a></h5>
                                 {{news.description}}<br>
-                                <span style="font-style:italic;padding-top: 3%">Author:-{{news.author}}</span>
+                                <span style="font-style:italic;padding-top: 3%">Source:-{{news.provider[0].name}}</span>
                             </div>
                         </div>
                     </div>

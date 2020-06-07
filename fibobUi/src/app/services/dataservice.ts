@@ -26,19 +26,9 @@ constructor(private http:HttpClient){
 ngOnInit(){
 }
 
-getMarketNews():Observable<any>{
-    this.urlEndpoint="https://microsoft-azure-bing-news-search-v1.p.rapidapi.com/search?q=sensex";
-
-    
-     return this.http.get(this.urlEndpoint,{headers:this.headers});
-
-   /** return new Promise(resolve => {
-        this.http.get('https://newsapi.org/v2/everything?q=sensex&from=' + this.todaysDate+"&sortBy=publishedAt"+ '&apiKey=0f33051fb5fc4a018c6316c956acdf04')
-          .subscribe(tempdata => {
-            this.newsData = tempdata;
-            resolve(this.newsData);
-          });
-      });*/
+getNews(type:string):Observable<any>{
+    this.urlEndpoint="https://microsoft-azure-bing-news-search-v1.p.rapidapi.com/search?q="+type;
+    return this.http.get(this.urlEndpoint,{headers:this.headers});
 }
 
 }
